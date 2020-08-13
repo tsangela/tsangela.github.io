@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { enquireScreen } from 'enquire-js';
 
-import Button, { TYPES } from './components/button';
 import Landing from './views/landing';
+import Projects from './views/projects';
+import { landingData, projectsData } from './resources/data';
+import Button, { TYPES } from './components/button';
 
 function App() {
   const [isMobile, setIsMobile] = useState(enquireScreen((b) => b));
@@ -14,7 +16,8 @@ function App() {
 
   return (
     <div className='App'>
-      <Landing isMobile={isMobile} />
+      <Landing isMobile={isMobile} data={landingData} />
+      <Projects isMobile={isMobile} data={projectsData} />
       <header className='App-header'>
         <p>
           Edit <code>src/App.js</code> and save to reload.

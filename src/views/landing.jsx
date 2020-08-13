@@ -1,28 +1,50 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import Link from 'rc-scroll-anim/lib/ScrollLink';
+import TweenOne from 'rc-tween-one';
+import QueueAnim from 'rc-queue-anim';
 
 import Button from '../components/button';
 import theme from '../resources/theme.json';
 import { ReactComponent as Laptop } from '../resources/images/laptop.svg';
 
 function Landing(props) {
-  const { isMobile } = props;
-
+  const { isMobile, data } = props;
+  const animation = {
+    queue: 'bottom',
+    one: {
+      scaleY: '+=0.3',
+      opacity: 0,
+      type: 'from',
+      ease: 'easeOutQuad',
+    },
+  };
   return (
-    <LandingWrapper>
-      <ContentWrapper>
-        <LandingImage role='img' alt='landing image' mobile={isMobile} />
+    <LandingWrapper id={data.id}>
+      <ContentWrapper mobile={isMobile}>
+        <ImageWrapper
+          key='img'
+          animation={animation.one}
+          mobile={isMobile}
+          resetStyle
+        >
+          <Laptop role='img' alt='landing image' />
+        </ImageWrapper>
         <TextWrapper mobile={isMobile}>
-          <Header>
-            <span>hello, world!</span>
-          </Header>
-          <Intro>
-            thanks for dropping by! here, you will find all the tech-y stuff
-            i've been working on.
-          </Intro>
-          <div>
-            <Button color={theme.secondary}>see more</Button>
-          </div>
+          <QueueAnim
+            type={animation.queue}
+            key='text'
+            leaveReverse
+            ease={['easeOutQuad', 'easeInQuad']}
+          >
+            <Header key='h1'>
+              <span>{data.title}</span>
+            </Header>
+            <Intro key='p'>{data.text}</Intro>
+            <Link key='projects' to='projects' toHash={false}>
+              <Button color={data.button.color}>{data.button.children}</Button>
+            </Link>
+          </QueueAnim>
         </TextWrapper>
       </ContentWrapper>
     </LandingWrapper>
@@ -48,6 +70,15 @@ const ContentWrapper = styled.div`
 
   width: 100%;
   flex-wrap: wrap;
+
+  ${(props) =>
+    props.mobile
+      ? css`
+          flex-direction: column;
+        `
+      : css`
+          flex-direction: row-reverse;
+        `}
 `;
 
 const TextWrapper = styled.div`
@@ -77,21 +108,20 @@ const Header = styled.h1`
   }
 `;
 
-const Intro = styled.span`
+const Intro = styled.p`
   line-height: 1.8;
-  margin: 0 0 20px 0;
 `;
 
-const LandingImage = styled(Laptop)`
-  min-width: 300px;
-  width: 55%;
+const ImageWrapper = styled(TweenOne)`
+  width: 50%;
+  margin: -48px;
 
   ${(props) =>
     props.mobile &&
     css`
       min-width: 400px;
-      width: 65%;
-      margin: -52px 0;
+      width: 70%;
+      margin: -64px;
     `}
 `;
 
