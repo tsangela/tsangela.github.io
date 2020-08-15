@@ -8633,7 +8633,16 @@ rc-scroll-anim@^2.7.4:
     react-lifecycles-compat "^3.0.4"
     tween-functions "1.x"
 
-rc-tween-one@^2.4.0, rc-tween-one@^2.5.0, rc-tween-one@^2.7.3:
+rc-texty@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/rc-texty/-/rc-texty-0.2.0.tgz#79af813523bfc314ba74af2bc086cda8b3296458"
+  integrity sha512-hGaXs8ZsSL/m7LEuCySxLWZtmFJ7bwldgtH5V90v6uBfy5eTLxSVLK5TpS2DPQHZrjl4sHXjRbKsCDk6v9x29A==
+  dependencies:
+    babel-runtime "6.x"
+    classnames "^2.2.6"
+    rc-tween-one "^2.2.0"
+
+rc-tween-one@^2.2.0, rc-tween-one@^2.4.0, rc-tween-one@^2.5.0, rc-tween-one@^2.7.3:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/rc-tween-one/-/rc-tween-one-2.7.3.tgz#c9d3c44743e25c654d65c22ec3934afd79923fae"
   integrity sha512-n4OPRLO6VMZHj61unq5KKxHMMfBz52bxob94fN3U5M9GqFg3H+T3TXnpHPnAK+cq/xBGo70ik2vB4Fpjo/txcA==

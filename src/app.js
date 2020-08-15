@@ -9,7 +9,7 @@ function App() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    enquireScreen((b) => setIsMobile(b));
+    enquireScreen((b) => setIsMobile(!!b));
     console.log(isMobile); // todo(atsang): delete
   });
 

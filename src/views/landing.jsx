@@ -1,8 +1,10 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import Link from 'rc-scroll-anim/lib/ScrollLink';
 import TweenOne from 'rc-tween-one';
 import QueueAnim from 'rc-queue-anim';
+import Texty from 'rc-texty';
+import Link from 'rc-scroll-anim/lib/ScrollLink';
+import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 import { SvgBackground } from '../components/svg-backgrounds';
 import { PopButton } from '../components/buttons';
@@ -22,35 +24,42 @@ function Landing(props) {
   };
   return (
     <LandingWrapper id={data.id}>
-      <SvgBackground />
-      <ContentWrapper mobile={isMobile}>
-        <ImageWrapper
-          key="img"
-          animation={animation.one}
-          mobile={isMobile}
-          resetStyle
-        >
-          <Laptop role="img" alt="landing image" />
-        </ImageWrapper>
-        <TextWrapper mobile={isMobile}>
-          <QueueAnim
-            type={animation.queue}
-            key="text"
-            leaveReverse
-            ease={['easeOutQuad', 'easeInQuad']}
+      <OverPack playScale={0.3} style={{ width: '100%' }}>
+        <SvgBackground />
+        <ContentWrapper mobile={isMobile}>
+          <ImageWrapper
+            key="img"
+            animation={animation.one}
+            mobile={isMobile}
+            resetStyle
           >
-            <Header key="h1">
-              <span>{data.title}</span>
-            </Header>
-            <Intro key="p">{data.text}</Intro>
-            <Link key="projects" to="projects" toHash={false}>
-              <PopButton color={data.button.color} size="large">
-                {data.button.children}
-              </PopButton>
-            </Link>
-          </QueueAnim>
-        </TextWrapper>
-      </ContentWrapper>
+            <Laptop role="img" alt="landing image" />
+          </ImageWrapper>
+          <TextWrapper mobile={isMobile}>
+            <QueueAnim
+              type={animation.queue}
+              key="text"
+              leaveReverse
+              ease={['easeOutQuad', 'easeInQuad']}
+            >
+              <Header key="h1">
+                <span>
+                  <Texty top="top" mode="smooth">
+                    {data.title}
+                  </Texty>
+                </span>
+              </Header>
+
+              <Intro key="p">{data.text}</Intro>
+              <Link key="projects" to="projects" toHash={false}>
+                <PopButton color={data.button.color} size="large">
+                  {data.button.children}
+                </PopButton>
+              </Link>
+            </QueueAnim>
+          </TextWrapper>
+        </ContentWrapper>
+      </OverPack>
     </LandingWrapper>
   );
 }
