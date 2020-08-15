@@ -136,3 +136,16 @@ export const projectsData = {
     },
   ],
 };
+
+export const aboutData = {
+  id: 'about',
+  title: 'about',
+  name: 'Angela Tsang',
+  biography:
+    "Hello, and welcome to my website! It's very nice to meet you! Let me tell you a little bit about myself... I am a 4th B.Sc. Major in Computer Science at the beautiful University of British Columbia. When I'm not click-clacking on the keyboard, I like to pet my cute lil doggos, play badminton, and go on food adventures.",
+  social: {
+    github: 'https://github.com/tsangela/',
+    linkedin: 'https://www.linkedin.com/in/tsangela/',
+    website: 'https://tsangela.github.io/',
+  },
+};

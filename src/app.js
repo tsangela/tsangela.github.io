@@ -3,20 +3,21 @@ import { enquireScreen } from 'enquire-js';
 
 import Landing from './views/landing';
 import Projects from './views/projects';
-import { landingData, projectsData } from './resources/data';
+import About from './views/about';
+import { landingData, projectsData, aboutData } from './resources/data';
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     enquireScreen((b) => setIsMobile(!!b));
-    console.log(isMobile); // todo(atsang): delete
   });
 
   return (
     <>
       <Landing isMobile={isMobile} data={landingData} />
       <Projects isMobile={isMobile} data={projectsData} />
+      <About isMobile={isMobile} data={aboutData} />
     </>
   );
 }
