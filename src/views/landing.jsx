@@ -16,7 +16,7 @@ function Landing(props) {
   const animation = {
     queue: 'bottom',
     one: {
-      scaleY: '+=2',
+      scaleY: '+=0.3',
       opacity: 0,
       type: 'from',
       ease: 'easeOutQuad',
@@ -111,10 +111,6 @@ const TextWrapper = styled.div`
 `;
 
 const Header = styled.h1`
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-  font-weight: normal;
-
   span {
     background: black;
     color: white;

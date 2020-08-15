@@ -476,6 +476,8 @@ export function SvgBackground() {
 }
 
 const SvgBackgroundWrapper = styled.div`
+  z-index: -1;
+
   svg {
     position: absolute;
     width: 100%;

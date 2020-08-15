@@ -14,6 +14,7 @@ export const landingData = {
 
 export const projectsData = {
   id: 'projects',
+  title: 'projects',
   items: [
     {
       date: {

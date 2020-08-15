@@ -128,9 +128,6 @@ const Preview = styled.img`
 
 const CardTitle = styled.h1`
   margin-top: 0;
-  font-weight: normal;
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
   font-size: large;
 `;
 

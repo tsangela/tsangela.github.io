@@ -4,13 +4,22 @@ import TweenOne from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 import Card from '../components/card';
+import Divider from '../components/divider';
 import { SvgBackground } from '../components/svg-backgrounds';
 
 const animation = {
-  opacity: 0,
-  scale: 0.7,
-  type: 'from',
-  ease: 'easeOutQuad',
+  header: {
+    opacity: 0,
+    y: 40,
+    type: 'from',
+    ease: 'easeOutQuad',
+  },
+  projects: {
+    opacity: 0,
+    scale: 0.7,
+    type: 'from',
+    ease: 'easeOutQuad',
+  },
 };
 
 function Projects(props) {
@@ -18,27 +27,40 @@ function Projects(props) {
   return (
     <Container id={data.id}>
       <SvgBackground />
-      <ProjectsWrapper>
-        {data.items.map((item) => (
-          <TweenOne key={item.title} animation={animation} resetStyle>
-            <Card isMobile={isMobile} item={item}>
+      <PaddingOverPack>
+        <TweenOne key="header" animation={animation.header}>
+          <h1>{data.title}</h1>
+          <Divider />
+        </TweenOne>
+        <ProjectsWrapper key="project-cards" animation={animation.projects}>
+          {data.items.map((item) => (
+            <Card key={item.title} isMobile={isMobile} item={item}>
               {item.description}
             </Card>
-          </TweenOne>
-        ))}
-      </ProjectsWrapper>
+          ))}
+        </ProjectsWrapper>
+      </PaddingOverPack>
     </Container>
   );
 }
 
 const Container = styled.div`
   position: relative;
+
+  h1 {
+    margin-top: 0;
+    text-align: center;
+  }
 `;
 
-const ProjectsWrapper = styled(OverPack)`
+const PaddingOverPack = styled(OverPack)`
   padding: 32px;
+`;
+
+const ProjectsWrapper = styled(TweenOne)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: 32px;
 `;
 
 export default Projects;
