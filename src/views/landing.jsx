@@ -4,7 +4,8 @@ import Link from 'rc-scroll-anim/lib/ScrollLink';
 import TweenOne from 'rc-tween-one';
 import QueueAnim from 'rc-queue-anim';
 
-import Button from '../components/button';
+import { SvgBackground } from '../components/svg-backgrounds';
+import { PopButton } from '../components/buttons';
 import theme from '../resources/theme.json';
 import { ReactComponent as Laptop } from '../resources/images/laptop.svg';
 
@@ -13,7 +14,7 @@ function Landing(props) {
   const animation = {
     queue: 'bottom',
     one: {
-      scaleY: '+=0.3',
+      scaleY: '+=2',
       opacity: 0,
       type: 'from',
       ease: 'easeOutQuad',
@@ -21,28 +22,31 @@ function Landing(props) {
   };
   return (
     <LandingWrapper id={data.id}>
+      <SvgBackground />
       <ContentWrapper mobile={isMobile}>
         <ImageWrapper
-          key='img'
+          key="img"
           animation={animation.one}
           mobile={isMobile}
           resetStyle
         >
-          <Laptop role='img' alt='landing image' />
+          <Laptop role="img" alt="landing image" />
         </ImageWrapper>
         <TextWrapper mobile={isMobile}>
           <QueueAnim
             type={animation.queue}
-            key='text'
+            key="text"
             leaveReverse
             ease={['easeOutQuad', 'easeInQuad']}
           >
-            <Header key='h1'>
+            <Header key="h1">
               <span>{data.title}</span>
             </Header>
-            <Intro key='p'>{data.text}</Intro>
-            <Link key='projects' to='projects' toHash={false}>
-              <Button color={data.button.color}>{data.button.children}</Button>
+            <Intro key="p">{data.text}</Intro>
+            <Link key="projects" to="projects" toHash={false}>
+              <PopButton color={data.button.color} size="large">
+                {data.button.children}
+              </PopButton>
             </Link>
           </QueueAnim>
         </TextWrapper>

@@ -2,37 +2,32 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Card from '../components/card';
+import { SvgBackground } from '../components/svg-backgrounds';
 
 function Projects(props) {
-  const { data } = props;
+  const { isMobile, data } = props;
   return (
-    <ProjectsWrapper id={data.id}>
-      {data.items.map((item) => (
-        <ItemWrapper>
-          <Card key={item.id} title={item.title}>
+    <Container id={data.id}>
+      <SvgBackground />
+      <ProjectsWrapper>
+        {data.items.map((item) => (
+          <Card key={item.title} isMobile={isMobile} item={item}>
             {item.description}
           </Card>
-          <img src={item.image} alt='test' />
-        </ItemWrapper>
-      ))}
-    </ProjectsWrapper>
+        ))}
+      </ProjectsWrapper>
+    </Container>
   );
 }
 
-const ProjectsWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+const Container = styled.div`
+  position: relative;
 `;
 
-const ItemWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 16px;
-
-  div,
-  img {
-    width: 50%;
-  }
+const ProjectsWrapper = styled.div`
+  padding: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 `;
 
 export default Projects;
