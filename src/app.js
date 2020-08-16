@@ -4,7 +4,13 @@ import { enquireScreen } from 'enquire-js';
 import Landing from './views/landing';
 import Projects from './views/projects';
 import About from './views/about';
-import { landingData, projectsData, aboutData } from './resources/data';
+import {
+  landingData,
+  projectsData,
+  aboutData,
+  contactData,
+} from './resources/data';
+import Contact from './views/contact';
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -18,6 +24,7 @@ function App() {
       <Landing isMobile={isMobile} data={landingData} />
       <Projects isMobile={isMobile} data={projectsData} />
       <About isMobile={isMobile} data={aboutData} />
+      <Contact isMobile={isMobile} data={contactData} />
     </>
   );
 }

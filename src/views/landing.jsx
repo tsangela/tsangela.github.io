@@ -8,6 +8,7 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 import { SvgBackground } from '../components/svg-backgrounds';
 import { PopButton } from '../components/buttons';
+import { ids } from '../resources/data';
 import theme from '../resources/theme.json';
 import { ReactComponent as Laptop } from '../resources/images/laptop.svg';
 
@@ -38,11 +39,11 @@ function Landing(props) {
           <TextWrapper mobile={isMobile}>
             <QueueAnim
               type={animation.queue}
-              key="text"
+              key="intro"
               leaveReverse
               ease={['easeOutQuad', 'easeInQuad']}
             >
-              <Header key="h1">
+              <Header key="intro-header">
                 <span>
                   <Texty top="top" mode="smooth">
                     {data.title}
@@ -50,8 +51,8 @@ function Landing(props) {
                 </span>
               </Header>
 
-              <Intro key="p">{data.text}</Intro>
-              <Link key="projects" to="projects" toHash={false}>
+              <Intro key="intro-text">{data.text}</Intro>
+              <Link key={ids.projects} to={ids.projects} toHash={false}>
                 <PopButton color={data.button.color} size="large">
                   {data.button.children}
                 </PopButton>

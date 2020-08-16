@@ -40,7 +40,6 @@ const Container = styled.div`
 const ProjectsWrapper = styled(TweenOne)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  margin-top: 32px;
 `;
 
 export default Projects;

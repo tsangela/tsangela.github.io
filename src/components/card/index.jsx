@@ -108,8 +108,11 @@ const CardDiv = styled.div`
 
 const ContentWrapper = styled.div`
   padding: 8px 16px;
-  overflow: scroll;
   text-align: center;
+
+  &:hover {
+    overflow: scroll;
+  }
 `;
 
 const ButtonsWrapper = styled.div`
@@ -126,7 +129,7 @@ const Preview = styled.img`
   object-fit: cover;
 `;
 
-const CardTitle = styled.h1`
+const CardTitle = styled.h2`
   margin-top: 0;
   font-size: large;
 `;

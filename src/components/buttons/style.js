@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { lighten } from 'polished';
+import { lighten, darken, transparentize } from 'polished';
 
 const BaseButton = styled.button`
   cursor: pointer;
@@ -43,6 +43,38 @@ export const StyledPopButton = styled(StyledFilledButton)`
   &:hover {
     transform: translateY(-6px);
     box-shadow: 0 18px 12px ${(props) => lighten(0.1, props.color)};
+  }
+`;
+
+export const StyledGhostButton = styled(BaseButton)`
+  background: white;
+  border-color: white;
+  color: ${(props) => props.color};
+  font-size: large;
+  box-shadow: 0 12px 12px ${(props) => props.color};
+
+  &:hover {
+    box-shadow: 0 12px 12px ${(props) => darken(0.1, props.color)};
+  }
+`;
+
+export const StyledIconButton = styled.button`
+  cursor: pointer;
+  border: none;
+
+  font-size: 48px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+
+  background: white;
+  color: ${(props) => props.color};
+  box-shadow: 0 6px 12px ${(props) => transparentize(0.5, props.color)};
+
+  transition: 0.2s ease-out;
+
+  &:hover {
+    transform: translateY(-5px);
   }
 `;
 

@@ -3,5 +3,8 @@
   "primary": "#a7d0e8",
   "secondary": "#9db6c9",
   "tertiary": "#afddb5",
-  "light": "#eae8e2"
+  "background-secondary": "#e9fae6",
+  "light": "#ebedf0",
+  "bright": "#ffd55e",
+  "bright-secondary": "#48c0d8"
 }

@@ -14,10 +14,10 @@ const animation = {
 function Header(props) {
   const { children } = props;
   return (
-    <TweenOne key="header" animation={animation}>
+    <MarginTweenOne key="header" animation={animation}>
       <Title>{children}</Title>
       <Divider />
-    </TweenOne>
+    </MarginTweenOne>
   );
 }
 
@@ -26,4 +26,8 @@ export default Header;
 const Title = styled.h1`
   margin-top: 0;
   text-align: center;
+`;
+
+const MarginTweenOne = styled(TweenOne)`
+  margin-bottom: 32px;
 `;

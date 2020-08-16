@@ -1,8 +1,23 @@
 import React from 'react';
 import theme from './theme.json';
 
+import portrait from './images/alegna.png';
+import { Highlight } from '../components/globals';
+
+export const ids = {
+  landing: 'landing',
+  projects: 'projects',
+  about: 'about',
+  contact: 'contact',
+};
+
+export const socialTypes = {
+  github: 'github',
+  linkedin: 'linkedin',
+};
+
 export const landingData = {
-  id: 'landing',
+  id: ids.landing,
   title: 'hello, world!',
   text:
     "thanks for dropping by! here, you will find all the tech-y stuff i've been working on.",
@@ -13,7 +28,7 @@ export const landingData = {
 };
 
 export const projectsData = {
-  id: 'projects',
+  id: ids.projects,
   title: 'projects',
   items: [
     {
@@ -138,14 +153,27 @@ export const projectsData = {
 };
 
 export const aboutData = {
-  id: 'about',
-  title: 'about',
-  name: 'Angela Tsang',
-  biography:
-    "Hello, and welcome to my website! It's very nice to meet you! Let me tell you a little bit about myself... I am a 4th B.Sc. Major in Computer Science at the beautiful University of British Columbia. When I'm not click-clacking on the keyboard, I like to pet my cute lil doggos, play badminton, and go on food adventures.",
-  social: {
-    github: 'https://github.com/tsangela/',
-    linkedin: 'https://www.linkedin.com/in/tsangela/',
-    website: 'https://tsangela.github.io/',
+  id: ids.about,
+  title: 'about me',
+  biography: (
+    <span>
+      Hello, my name is <Highlight>Angela Tsang</Highlight>, and welcome to my
+      website! It's very nice to meet you! I am a{' '}
+      <Highlight>4th B.Sc. Major in Computer Science</Highlight> at the
+      beautiful University of British Columbia. When I'm not click-clacking on
+      the keyboard, I like to pet my cute lil doggos, play badminton, and go on
+      food adventures. ✨
+    </span>
+  ),
+  portrait: portrait,
+};
+
+export const contactData = {
+  id: ids.contact,
+  title: 'contact me',
+  subtitle: 'i exist in all these places:',
+  socials: {
+    [socialTypes.github]: 'https://github.com/tsangela/',
+    [socialTypes.linkedin]: 'https://www.linkedin.com/in/tsangela/',
   },
 };

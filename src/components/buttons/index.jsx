@@ -4,6 +4,8 @@ import {
   StyledFilledButton,
   StyledOutlineButton,
   StyledPopButton,
+  StyledGhostButton,
+  StyledIconButton,
   ButtonIcon,
 } from './style';
 import theme from '../../resources/theme.json';
@@ -38,6 +40,21 @@ export function PopButton(props) {
   );
 }
 
+export function GhostButton(props) {
+  const { icon, children, ...rest } = props;
+  return (
+    <StyledGhostButton {...rest}>
+      <ButtonIcon>{icon}</ButtonIcon>
+      {children}
+    </StyledGhostButton>
+  );
+}
+
+export function IconButton(props) {
+  const { icon, ...rest } = props;
+  return <StyledIconButton {...rest}>{icon}</StyledIconButton>;
+}
+
 const defaultProps = {
   color: theme.primary,
   size: 'medium',
@@ -46,3 +63,5 @@ const defaultProps = {
 FilledButton.defaultProps = defaultProps;
 OutlineButton.defaultProps = defaultProps;
 PopButton.defaultProps = defaultProps;
+GhostButton.defaultProps = defaultProps;
+IconButton.defaultProps = defaultProps;
