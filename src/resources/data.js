@@ -1,14 +1,27 @@
 import React from 'react';
 import theme from './theme.json';
 
-import portrait from './images/alegna.png';
 import { Highlight } from '../components/globals';
+import portrait from './images/alegna.png';
+import hungryCat from './images/previews/hungry-cat.png';
+import connectFour from './images/previews/connect-four.png';
+import todo from './images/previews/todo.png';
+import youDecide from './images/previews/you-decide-0.png';
+import stylisr from './images/previews/stylisr.png';
+import confessions from './images/previews/confessions.png';
+import generic from './images/previews/generic-image.png';
 
 export const ids = {
   landing: 'landing',
   projects: 'projects',
   about: 'about',
   contact: 'contact',
+};
+
+export const linkTypes = {
+  code: 'code',
+  demo: 'demo',
+  download: 'download',
 };
 
 export const socialTypes = {
@@ -63,11 +76,10 @@ export const projectsData = {
         'Implemented GraphQL APIs to query and mutate data from MongoDB store',
         'Developed a web scraper to dynamically retrieve clothing item metadata from a given URL',
       ],
-      image:
-        'https://cdn.pixabay.com/photo/2017/04/02/04/59/love-2195023_1280.png',
+      image: stylisr,
       links: {
-        live: 'https://stylisr.herokuapp.com/',
-        code: 'https://github.com/X-AE-A-436/styliser/',
+        [linkTypes.demo]: 'https://stylisr.herokuapp.com/',
+        [linkTypes.code]: 'https://github.com/X-AE-A-436/styliser/',
       },
     },
     {
@@ -96,11 +108,33 @@ export const projectsData = {
         'Built a per-message voting system',
         'Configured continuous deployment on Heroku',
       ],
-      image:
-        'https://cdn.pixabay.com/photo/2017/04/02/04/59/love-2195023_1280.png',
+      image: confessions,
       links: {
-        live: 'https://uni-confessions.herokuapp.com/',
-        code: 'https://github.com/tsangela/assignment-2/',
+        [linkTypes.demo]: 'https://uni-confessions.herokuapp.com/',
+        [linkTypes.code]: 'https://github.com/tsangela/assignment-2/',
+      },
+    },
+    {
+      date: {
+        start: 'Nov 2019',
+        end: '',
+      },
+      technologies: ['d3.js', 'typescript'],
+      title: 'tiny analysis',
+      subtitle: 'java code coupling grapher',
+      description: (
+        <span>
+          Gain a better understanding of your Java code through graphical
+          visualization.
+        </span>
+      ),
+      contributions: [
+        'Leveraged static lexical analysis Java repository to highlight class coupling and code similarity',
+        'Implemented class comparison analysis which calculates a code similarity score between and produces a diff of two classes',
+      ],
+      image: generic,
+      links: {
+        [linkTypes.code]: 'https://github.com/mehtamanan/tiny-analysis',
       },
     },
     {
@@ -108,7 +142,7 @@ export const projectsData = {
         start: 'July 2019',
         end: 'Dec 2019',
       },
-      technologies: ['react', 'javascript', 'css', 'google places api'],
+      technologies: ['react', 'javascript', 'google places api'],
       title: 'you decide',
       subtitle: 'eatery decider',
       description: (
@@ -122,11 +156,10 @@ export const projectsData = {
         'Dynamically compute the distance to a food place using Haversine distance calculation',
         'Introduced random place selection to help with decision-making',
       ],
-      image:
-        'https://cdn.pixabay.com/photo/2017/04/02/04/59/love-2195023_1280.png',
+      image: youDecide,
       links: {
-        live: 'https://tsangela.github.io/you-decide/',
-        code: 'https://github.com/tsangela/you-decide/',
+        [linkTypes.demo]: 'https://tsangela.github.io/you-decide/',
+        [linkTypes.code]: 'https://github.com/tsangela/you-decide/',
       },
     },
     {
@@ -134,7 +167,7 @@ export const projectsData = {
         start: 'Feb 2019',
         end: '',
       },
-      technologies: ['react', 'javascript', 'css'],
+      technologies: ['react', 'javascript'],
       title: 'connect four',
       subtitle: '2-player strategy game',
       description: (
@@ -142,11 +175,85 @@ export const projectsData = {
           Childhood nostalgia... Race a friend to <i>connect four!</i>
         </span>
       ),
-      image:
-        'https://cdn.pixabay.com/photo/2017/04/02/04/59/love-2195023_1280.png',
+      contributions: [
+        'Added mouse movement tracking to render a preview of the column to drop the coin',
+        'Implemented winner resolution by pre-calculating all possible winning paths',
+      ],
+      image: connectFour,
       links: {
-        live: 'https://tsangela.github.io/connect-four/',
-        code: 'https://github.com/tsangela/connect-four/',
+        [linkTypes.demo]: 'https://tsangela.github.io/connect-four/',
+        [linkTypes.code]: 'https://github.com/tsangela/connect-four/',
+      },
+    },
+    {
+      date: {
+        start: 'Jan 2019',
+        end: '',
+      },
+      technologies: ['react', 'javascript', 'microsoft azure'],
+      title: 'bestfriendbot',
+      subtitle: 'confidence-training chat bot',
+      description: (
+        <span>
+          Train your communicative confidence the <i>cool</i> way — via chat
+          bot!{' '}
+          <span style={{ fontSize: 'small' }}>
+            Won the Wolfram Award at nwHacks 2019 (top 20 of 132 teams).
+          </span>
+        </span>
+      ),
+      contributions: [
+        "Integrated Microsoft Azure cognitive services to translate vocal input into iterative feedback of user's communication skills",
+        "Built a dashboard UI that displays a descriptive summary of speaking scores to conveniently track the user's progress",
+        "Placed top 20 of 132 teams and won the Wolfram Award at nwHacks 2019 (Western Canada's Largest Hackathon)",
+      ],
+      image: generic,
+      links: {
+        [linkTypes.code]:
+          'https://github.com/nwhacksmysteriousmysteriousproject/AzureTalkToMe',
+      },
+    },
+    {
+      date: {
+        start: 'Sept 2018',
+        end: '',
+      },
+      technologies: ['java', 'xml'],
+      title: 'task manager',
+      subtitle: 'prioritized to-do list app',
+      description: (
+        <span>Prioritize your tasks, get the most out of your day.</span>
+      ),
+      contributions: [
+        'Implemented three-tier priority feature for users to order their tasks based on importance',
+        'Utilized the SharedPreferences class to save and restore tasks on reopen',
+      ],
+      image: todo,
+      links: {
+        [linkTypes.code]: 'https://github.com/tsangela/PrioritizedToDoList',
+        [linkTypes.download]:
+          'https://github.com/tsangela/PrioritizedToDoList/raw/master/app-release.apk',
+      },
+    },
+    {
+      date: {
+        start: 'Mar 2018',
+        end: 'May 2018',
+      },
+      technologies: ['java'],
+      title: 'hungry cat',
+      subtitle: 'snake game',
+      description: (
+        <span>A simple snake-like game featuring a very hungry cat.</span>
+      ),
+      contributions: [
+        'Used state design pattern to partition gameplay based on distinct game states',
+        'Modelled item drop rate based on a discrete probability distribution',
+        'Utilized JFrame and JPanel to create a seamless double-buffered window',
+      ],
+      image: hungryCat,
+      links: {
+        [linkTypes.code]: 'https://github.com/tsangela/HungryCat',
       },
     },
   ],

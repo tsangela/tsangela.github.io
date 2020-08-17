@@ -1,12 +1,45 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { GlobalOutlined, CodeOutlined } from '@ant-design/icons';
+import {
+  GlobalOutlined,
+  CodeOutlined,
+  LinkOutlined,
+  DownloadOutlined,
+} from '@ant-design/icons';
 
-import theme from '../../resources/theme.json';
 import { FilledButton } from '../buttons';
+import { linkTypes } from '../../resources/data';
+import theme from '../../resources/theme.json';
 
 const formatDate = (date) =>
   date && (date.end ? `${date.start} - ${date.end}` : date.start);
+
+const getIcon = (type) => {
+  switch (type) {
+    case linkTypes.demo:
+      return <GlobalOutlined />;
+    case linkTypes.code:
+      return <CodeOutlined />;
+    case linkTypes.download:
+      return <DownloadOutlined />;
+    default:
+      return <LinkOutlined />;
+  }
+};
+
+const renderButtons = (links) =>
+  Object.keys(links).map((type) => (
+    <a
+      href={links[type]}
+      target="_blank"
+      rel="noopener noreferrer"
+      alt={`go to ${type}`}
+    >
+      <FilledButton icon={getIcon(type)} size="small" color={theme.tertiary}>
+        {type}
+      </FilledButton>
+    </a>
+  ));
 
 function Card(props) {
   const [hovered, setHovered] = useState(false);
@@ -26,36 +59,7 @@ function Card(props) {
           <CardTitle>{title}</CardTitle>
           <Subtitle>{formatDate(date)}</Subtitle>
           <p>{children}</p>
-          <ButtonsWrapper>
-            <a
-              href={links.live}
-              alt="live preview"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FilledButton
-                size="small"
-                color={theme.tertiary}
-                icon={<GlobalOutlined />}
-              >
-                demo
-              </FilledButton>
-            </a>
-            <a
-              href={links.code}
-              alt="code repository"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FilledButton
-                size="small"
-                color={theme.tertiary}
-                icon={<CodeOutlined />}
-              >
-                code
-              </FilledButton>
-            </a>
-          </ButtonsWrapper>
+          <ButtonsWrapper>{renderButtons(links)}</ButtonsWrapper>
         </ContentWrapper>
       </Expandable>
     </CardDiv>
@@ -110,27 +114,33 @@ const ContentWrapper = styled.div`
   padding: 8px 16px;
   text-align: center;
 
+  p {
+    margin: 8px 0;
+  }
+
   &:hover {
     overflow: scroll;
   }
 `;
 
 const ButtonsWrapper = styled.div`
-  width: 164px;
-  max-width: 100%;
+  width: 100%;
   display: inline-grid;
   grid-gap: 4px;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  grid-auto-flow: column;
+  justify-content: center;
 `;
 
 const Preview = styled.img`
   width: 100%;
   height: 100%;
+  // max-height: 256px;
+  object-position: top;
   object-fit: cover;
 `;
 
 const CardTitle = styled.h2`
-  margin-top: 0;
+  margin: 0 0 8px 0;
   font-size: large;
 `;
 

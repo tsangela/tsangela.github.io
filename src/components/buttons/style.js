@@ -8,6 +8,7 @@ const BaseButton = styled.button`
   padding: ${(props) => (props.size === 'small' ? '4px 12px' : '8px 24px')};
   border-radius: 100px;
   border: 1px solid ${(props) => props.color};
+  white-space: nowrap;
 
   font-size: ${(props) => props.size};
   text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
@@ -37,12 +38,12 @@ export const StyledOutlineButton = styled(BaseButton)`
 `;
 
 export const StyledPopButton = styled(StyledFilledButton)`
-  box-shadow: 0 12px 12px ${(props) => lighten(0.1, props.color)};
+  box-shadow: 0 12px 12px ${(props) => transparentize(0.4, props.color)};
   font-size: large;
 
   &:hover {
     transform: translateY(-6px);
-    box-shadow: 0 18px 12px ${(props) => lighten(0.1, props.color)};
+    box-shadow: 0 18px 12px ${(props) => transparentize(0.4, props.color)};
   }
 `;
 

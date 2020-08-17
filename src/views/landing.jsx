@@ -10,7 +10,7 @@ import { SvgBackground } from '../components/svg-backgrounds';
 import { PopButton } from '../components/buttons';
 import { ids } from '../resources/data';
 import theme from '../resources/theme.json';
-import { ReactComponent as Laptop } from '../resources/images/laptop.svg';
+import { ReactComponent as Laptop } from '../resources/images/backgrounds/laptop.svg';
 
 function Landing(props) {
   const { isMobile, data } = props;

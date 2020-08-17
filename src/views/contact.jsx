@@ -8,8 +8,8 @@ import Header from '../components/header';
 import { IconButton } from '../components/buttons';
 import { PaddingOverPack } from '../components/globals';
 import { socialTypes } from '../resources/data';
-import { ReactComponent as Message } from '../resources/images/contact.svg';
-import flowers from '../resources/images/flowers.png';
+import { ReactComponent as Message } from '../resources/images/backgrounds/contact.svg';
+import flowers from '../resources/images/backgrounds/flowers.png';
 import theme from '../resources/theme.json';
 
 const animation = {
@@ -59,7 +59,7 @@ function Contact(props) {
         animation={animation.background}
         style={{
           position: 'relative',
-          bottom: 32,
+          // bottom: 32,
         }}
       >
         <Message />
@@ -78,18 +78,18 @@ function Contact(props) {
 }
 
 const Container = styled(PaddingOverPack)`
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.8)
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
     ),
     url(${flowers});
   background-size: contain;
+  background-attachment: fixed;
 `;
 
 const Subtitle = styled.div`
@@ -102,7 +102,7 @@ const Subtitle = styled.div`
     padding: 2px 4px;
     background: ${theme.light};
     width: fit-content;
-    font-size: medium;
+    font-size: large;
     text-align: center;
   }
 `;
