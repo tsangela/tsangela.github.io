@@ -1,15 +1,16 @@
 import React from 'react';
 import theme from './theme.json';
 
-import { Highlight } from '../components/globals';
+import { Highlight } from '../components/styled';
 import portrait from './images/alegna.png';
 import hungryCat from './images/previews/hungry-cat.png';
 import connectFour from './images/previews/connect-four.png';
 import todo from './images/previews/todo.png';
 import youDecide from './images/previews/you-decide-0.png';
 import stylisr from './images/previews/stylisr.png';
-import confessions from './images/previews/confessions.png';
-import generic from './images/previews/generic-image.png';
+import confessions from './images/previews/confessions-1.png';
+import tinyAnalysis from './images/previews/tiny-analysis.png';
+import cogitive from './images/previews/cognitive.png';
 
 export const ids = {
   landing: 'landing',
@@ -36,7 +37,7 @@ export const landingData = {
     "thanks for dropping by! here, you will find all the tech-y stuff i've been working on.",
   button: {
     color: theme.secondary,
-    children: 'learn more',
+    children: 'see projects',
   },
 };
 
@@ -132,7 +133,7 @@ export const projectsData = {
         'Leveraged static lexical analysis Java repository to highlight class coupling and code similarity',
         'Implemented class comparison analysis which calculates a code similarity score between and produces a diff of two classes',
       ],
-      image: generic,
+      image: tinyAnalysis,
       links: {
         [linkTypes.code]: 'https://github.com/mehtamanan/tiny-analysis',
       },
@@ -207,7 +208,7 @@ export const projectsData = {
         "Built a dashboard UI that displays a descriptive summary of speaking scores to conveniently track the user's progress",
         "Placed top 20 of 132 teams and won the Wolfram Award at nwHacks 2019 (Western Canada's Largest Hackathon)",
       ],
-      image: generic,
+      image: cogitive,
       links: {
         [linkTypes.code]:
           'https://github.com/nwhacksmysteriousmysteriousproject/AzureTalkToMe',
@@ -266,7 +267,7 @@ export const aboutData = {
     <span>
       Hello, my name is <Highlight>Angela Tsang</Highlight>, and welcome to my
       website! It's very nice to meet you! I am a{' '}
-      <Highlight>4th B.Sc. Major in Computer Science</Highlight> at the
+      <Highlight>4th Year B.Sc. Major in Computer Science</Highlight> at the
       beautiful University of British Columbia. When I'm not click-clacking on
       the keyboard, I like to pet my cute lil doggos, play badminton, and go on
       food adventures. ✨

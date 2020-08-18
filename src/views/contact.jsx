@@ -6,7 +6,7 @@ import { GithubFilled, LinkedinFilled, LinkOutlined } from '@ant-design/icons';
 
 import Header from '../components/header';
 import { IconButton } from '../components/buttons';
-import { PaddingOverPack } from '../components/globals';
+import { PaddingOverPack } from '../components/styled';
 import { socialTypes } from '../resources/data';
 import { ReactComponent as Message } from '../resources/images/backgrounds/contact.svg';
 import flowers from '../resources/images/backgrounds/flowers.png';

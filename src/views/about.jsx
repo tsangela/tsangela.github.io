@@ -4,7 +4,7 @@ import TweenOne from 'rc-tween-one';
 
 import Header from '../components/header';
 import { SvgBackground } from '../components/svg-backgrounds';
-import { PaddingOverPack } from '../components/globals';
+import { PaddingOverPack } from '../components/styled';
 import theme from '../resources/theme.json';
 
 const animation = {

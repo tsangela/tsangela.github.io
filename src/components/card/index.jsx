@@ -8,8 +8,10 @@ import {
 } from '@ant-design/icons';
 
 import { FilledButton } from '../buttons';
+import { Tag } from '../styled';
 import { linkTypes } from '../../resources/data';
 import theme from '../../resources/theme.json';
+import generic from '../../resources/images/previews/generic-image.png';
 
 const formatDate = (date) =>
   date && (date.end ? `${date.start} - ${date.end}` : date.start);
@@ -53,11 +55,11 @@ function Card(props) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <Preview src={image} alt={`${title} preview`} />
+      <Preview src={image || generic} alt={`${title} preview`} />
       <Expandable aria-expanded={hovered}>
         <ContentWrapper>
           <CardTitle>{title}</CardTitle>
-          <Subtitle>{formatDate(date)}</Subtitle>
+          <Tag>{formatDate(date)}</Tag>
           <p>{children}</p>
           <ButtonsWrapper>{renderButtons(links)}</ButtonsWrapper>
         </ContentWrapper>
@@ -75,7 +77,7 @@ const Expandable = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  max-height: 44px;
+  max-height: 40px;
 
   background: rgba(255, 255, 255, 1);
   overflow: hidden;
@@ -142,14 +144,6 @@ const Preview = styled.img`
 const CardTitle = styled.h2`
   margin: 0 0 8px 0;
   font-size: large;
-`;
-
-const Subtitle = styled.span`
-  background: ${theme.secondary};
-  color: white;
-  font-size: small;
-  padding: 4px;
-  border-radius: 2px;
 `;
 
 export default Card;
