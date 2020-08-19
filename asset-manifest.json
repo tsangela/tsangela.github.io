@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.37a85b26.chunk.css",
+    "main.js": "/static/js/main.b39f046f.chunk.js",
+    "main.js.map": "/static/js/main.b39f046f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.038c016d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.038c016d.js.map",
+    "static/js/2.b7af20f4.chunk.js": "/static/js/2.b7af20f4.chunk.js",
+    "static/js/2.b7af20f4.chunk.js.map": "/static/js/2.b7af20f4.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.31aa7088dcbe3609166ec608622004fa.js": "/precache-manifest.31aa7088dcbe3609166ec608622004fa.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.37a85b26.chunk.css.map": "/static/css/main.37a85b26.chunk.css.map",
+    "static/js/2.b7af20f4.chunk.js.LICENSE.txt": "/static/js/2.b7af20f4.chunk.js.LICENSE.txt",
+    "static/media/alegna.png": "/static/media/alegna.f0995943.png",
+    "static/media/cognitive.png": "/static/media/cognitive.ede25126.png",
+    "static/media/confessions-1.png": "/static/media/confessions-1.a2df1247.png",
+    "static/media/connect-four.png": "/static/media/connect-four.85ac525b.png",
+    "static/media/contact.1682d5fd.svg": "/static/media/contact.1682d5fd.svg",
+    "static/media/flowers.png": "/static/media/flowers.3599dd51.png",
+    "static/media/generic-image.png": "/static/media/generic-image.0a75ead6.png",
+    "static/media/hungry-cat.png": "/static/media/hungry-cat.5ab57bba.png",
+    "static/media/laptop.a9735245.svg": "/static/media/laptop.a9735245.svg",
+    "static/media/stylisr.png": "/static/media/stylisr.f4181d71.png",
+    "static/media/tiny-analysis.png": "/static/media/tiny-analysis.77300b40.png",
+    "static/media/todo.png": "/static/media/todo.5cfe7dfc.png",
+    "static/media/you-decide-0.png": "/static/media/you-decide-0.7c612666.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.038c016d.js",
+    "static/js/2.b7af20f4.chunk.js",
+    "static/css/main.37a85b26.chunk.css",
+    "static/js/main.b39f046f.chunk.js"
+  ]
+}
