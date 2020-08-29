@@ -47,7 +47,7 @@ const renderSocials = (socials) =>
       rel="noopener noreferrer"
       alt={`angela's ${type} profile`}
     >
-      <IconButton icon={getIcon(type)} color={theme.tertiary} />
+      <IconButton icon={getIcon(type)} color={theme.tertiary} size="large" />
     </a>
   ));
 
@@ -90,7 +90,7 @@ const Container = styled(ViewContainer)`
     ),
     url(${flowers});
   background-size: contain;
-  background-attachment: fixed;
+  // background-attachment: fixed;
 `;
 
 const Subtitle = styled.div`

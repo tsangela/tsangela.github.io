@@ -11,12 +11,18 @@ import stylisr from './images/previews/stylisr.png';
 import confessions from './images/previews/confessions-1.png';
 import tinyAnalysis from './images/previews/tiny-analysis.png';
 import cogitive from './images/previews/cognitive.png';
+import {
+  UserOutlined,
+  PhoneOutlined,
+  LaptopOutlined,
+  HomeOutlined,
+} from '@ant-design/icons';
 
-export const ids = {
-  landing: 'landing',
-  projects: 'projects',
-  about: 'about',
-  contact: 'contact',
+export const idMap = {
+  landing: { id: 'landing', icon: <HomeOutlined /> },
+  projects: { id: 'projects', icon: <LaptopOutlined /> },
+  about: { id: 'about', icon: <UserOutlined /> },
+  contact: { id: 'contact', icon: <PhoneOutlined /> },
 };
 
 export const linkTypes = {
@@ -31,7 +37,7 @@ export const socialTypes = {
 };
 
 export const landingData = {
-  id: ids.landing,
+  id: idMap.landing.id,
   title: 'hello, world!',
   text:
     "thanks for dropping by! here, you will find all the tech-y stuff i've been working on.",
@@ -42,7 +48,7 @@ export const landingData = {
 };
 
 export const projectsData = {
-  id: ids.projects,
+  id: idMap.projects.id,
   title: 'projects',
   items: [
     {
@@ -261,7 +267,7 @@ export const projectsData = {
 };
 
 export const aboutData = {
-  id: ids.about,
+  id: idMap.about.id,
   title: 'about me',
   biography: (
     <span>
@@ -277,7 +283,7 @@ export const aboutData = {
 };
 
 export const contactData = {
-  id: ids.contact,
+  id: idMap.contact.id,
   title: 'contact me',
   subtitle: 'i exist in all these places:',
   socials: {

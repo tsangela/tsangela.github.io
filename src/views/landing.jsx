@@ -7,10 +7,24 @@ import Link from 'rc-scroll-anim/lib/ScrollLink';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 import { SvgBackground } from '../components/svg-backgrounds';
-import { PopButton } from '../components/buttons';
-import { ids } from '../resources/data';
+import { IconButton } from '../components/buttons';
+import { idMap } from '../resources/data';
 import theme from '../resources/theme.json';
 import { ReactComponent as Laptop } from '../resources/images/backgrounds/laptop.svg';
+
+const renderLinks = (isMobile) =>
+  Object.keys(idMap).map((key) => {
+    const id = idMap[key].id;
+    const icon = idMap[key].icon;
+    return (
+      <LinkWrapper mobile={isMobile}>
+        <HoverLink key={id} to={id} toHash={false}>
+          <IconButton icon={icon} aria-label={`go to ${id} section`} />
+        </HoverLink>
+        <LinkTitle key={`${id}-title`}>{id}</LinkTitle>
+      </LinkWrapper>
+    );
+  });
 
 function Landing(props) {
   const { isMobile, data } = props;
@@ -52,11 +66,8 @@ function Landing(props) {
               </Header>
 
               <Intro key="intro-text">{data.text}</Intro>
-              <Link key={ids.projects} to={ids.projects} toHash={false}>
-                <PopButton color={data.button.color} size="large">
-                  {data.button.children}
-                </PopButton>
-              </Link>
+
+              <LinksRow key="links">{renderLinks(isMobile)}</LinksRow>
             </QueueAnim>
           </TextWrapper>
         </ContentWrapper>
@@ -131,8 +142,43 @@ const ImageWrapper = styled(TweenOne)`
     css`
       min-width: 400px;
       width: 70%;
-      margin: -64px;
+      margin: -84px;
     `}
+`;
+
+const LinksRow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+`;
+
+const LinkTitle = styled.span`
+  transition: 0.2s ease-out;
+  visibility: hidden;
+  opacity: 0;
+
+  text-align: center;
+  font-size: small;
+  margin: 4px;
+  padding: 2px 6px;
+  border-radius: 100px;
+
+  background: linear-gradient(to right, ${theme.primary}, ${theme.tertiary});
+  color: white;
+  // text-shadow: 0 0 10px #a7d0e8;
+`;
+
+const HoverLink = styled(Link)`
+  &:hover ~ ${LinkTitle} {
+    visibility: visible;
+    opacity: 1;
+  }
+`;
+
+const LinkWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export default Landing;

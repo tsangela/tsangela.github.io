@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { lighten, darken, transparentize } from 'polished';
 
 const BaseButton = styled.button`
@@ -59,13 +59,23 @@ export const StyledGhostButton = styled(BaseButton)`
   }
 `;
 
+const mediumIcon = css`
+  font-size: 32px;
+  width: 60px;
+  height: 60px;
+`;
+
+const largeIcon = css`
+  font-size: 48px;
+  width: 80px;
+  height: 80px;
+`;
+
 export const StyledIconButton = styled.button`
   cursor: pointer;
   border: none;
 
-  font-size: 48px;
-  width: 80px;
-  height: 80px;
+  ${(props) => (props.size === 'large' ? largeIcon : mediumIcon)}
   border-radius: 100%;
 
   background: white;

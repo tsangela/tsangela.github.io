@@ -21,15 +21,13 @@ function About(props) {
     <Container id={data.id}>
       <OverPack>
         <SvgBackground />
-        <div>
-          <Header>{data.title}</Header>
-          <TweenOne key="profile" animation={animation}>
-            <Profile>
-              <Portrait src={data.portrait} alt="angela tsang's portrait" />
-              <Biography>{data.biography}</Biography>
-            </Profile>
-          </TweenOne>
-        </div>
+        <Header>{data.title}</Header>
+        <TweenOne key="profile" animation={animation}>
+          <Profile>
+            <Portrait src={data.portrait} alt="angela tsang's portrait" />
+            <Biography>{data.biography}</Biography>
+          </Profile>
+        </TweenOne>
       </OverPack>
     </Container>
   );
