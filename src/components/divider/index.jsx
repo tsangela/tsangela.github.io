@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { ReactComponent as Shapes } from '../../resources/images/backgrounds/shapes.svg';
+
 function Divider() {
   return (
     <DividerWrapper>
-      <img
-        src="https://gw.alipayobjects.com/zos/rmsportal/PiqyziYmvbgAudYfhuBr.svg"
-        alt="divider decorator"
-      />
+      <Shapes />
     </DividerWrapper>
   );
 }
@@ -19,7 +18,7 @@ const DividerWrapper = styled.div`
   display: flex;
   justify-content: center;
 
-  img {
+  svg {
     min-width: 100px;
     width: 10%;
     height: auto;
