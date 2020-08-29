@@ -2,11 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import TweenOne from 'rc-tween-one';
 import Texty from 'rc-texty';
+import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import { GithubFilled, LinkedinFilled, LinkOutlined } from '@ant-design/icons';
 
 import Header from '../components/header';
 import { IconButton } from '../components/buttons';
-import { PaddingOverPack } from '../components/styled';
+import { ViewContainer } from '../components/styled';
 import { socialTypes } from '../resources/data';
 import { ReactComponent as Message } from '../resources/images/backgrounds/contact.svg';
 import flowers from '../resources/images/backgrounds/flowers.png';
@@ -54,34 +55,34 @@ function Contact(props) {
   const { data } = props;
   return (
     <Container id={data.id}>
-      <TweenOne
-        key="background"
-        animation={animation.background}
-        style={{
-          position: 'relative',
-          // bottom: 32,
-        }}
-      >
-        <Message />
-      </TweenOne>
-      <Header>{data.title}</Header>
-      <Subtitle key="subtitle">
-        <h2>
-          <Texty>{data.subtitle}</Texty>
-        </h2>
-      </Subtitle>
-      <ButtonsTween key="icons" animation={animation.icon}>
-        {renderSocials(data.socials)}
-      </ButtonsTween>
+      <OverPack>
+        <TweenOne
+          key="background"
+          animation={animation.background}
+          style={{
+            position: 'relative',
+            // bottom: 32,
+          }}
+        >
+          <Message />
+        </TweenOne>
+        <Header>{data.title}</Header>
+        <Subtitle key="subtitle">
+          <h2>
+            <Texty>{data.subtitle}</Texty>
+          </h2>
+        </Subtitle>
+        <ButtonsRow>
+          <ButtonsTween key="icons" animation={animation.icon}>
+            {renderSocials(data.socials)}
+          </ButtonsTween>
+        </ButtonsRow>
+      </OverPack>
     </Container>
   );
 }
 
-const Container = styled(PaddingOverPack)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+const Container = styled(ViewContainer)`
   background: linear-gradient(
       90deg,
       rgba(255, 255, 255, 0.7),
@@ -107,10 +108,22 @@ const Subtitle = styled.div`
   }
 `;
 
+const ButtonsRow = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const ButtonsTween = styled(TweenOne)`
   display: grid;
-  grid-gap: 8px;
+  grid-gap: 16px;
   grid-template-columns: 1fr 1fr;
+  width: min-content;
+
+  a {
+    justify-self: center;
+  }
 `;
 
 export default Contact;

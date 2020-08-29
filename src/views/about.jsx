@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import TweenOne from 'rc-tween-one';
+import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 import Header from '../components/header';
 import { SvgBackground } from '../components/svg-backgrounds';
-import { PaddingOverPack } from '../components/styled';
+import { ViewContainer } from '../components/styled';
 import theme from '../resources/theme.json';
 
 const animation = {
@@ -18,25 +19,23 @@ function About(props) {
   const { data } = props;
   return (
     <Container id={data.id}>
-      <SvgBackground />
-      <PaddingOverPack>
-        <Header>{data.title}</Header>
-        <TweenOne key="profile" animation={animation}>
-          <Profile>
-            <Portrait src={data.portrait} alt="angela tsang's portrait" />
-            <Biography>{data.biography}</Biography>
-          </Profile>
-        </TweenOne>
-      </PaddingOverPack>
+      <OverPack>
+        <SvgBackground />
+        <div>
+          <Header>{data.title}</Header>
+          <TweenOne key="profile" animation={animation}>
+            <Profile>
+              <Portrait src={data.portrait} alt="angela tsang's portrait" />
+              <Biography>{data.biography}</Biography>
+            </Profile>
+          </TweenOne>
+        </div>
+      </OverPack>
     </Container>
   );
 }
 
-const Container = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 50vh;
+const Container = styled(ViewContainer)`
   // background: linear-gradient(135deg, ${theme.tertiary}, ${theme.secondary});
   background: ${theme['background-secondary']};
 `;
