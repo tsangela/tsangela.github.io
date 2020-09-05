@@ -32,6 +32,7 @@ const getIcon = (type) => {
 const renderButtons = (links) =>
   Object.keys(links).map((type) => (
     <a
+      key={type}
       href={links[type]}
       target="_blank"
       rel="noopener noreferrer"

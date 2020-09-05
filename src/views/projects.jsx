@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import TweenOne from 'rc-tween-one';
+import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 import Card from '../components/card';
 import Header from '../components/header';
-import { PaddingOverPack } from '../components/styled';
 import { SvgBackground } from '../components/svg-backgrounds';
 
 const animation = {
@@ -19,7 +19,7 @@ function Projects(props) {
   return (
     <Container id={data.id}>
       <SvgBackground />
-      <PaddingOverPack>
+      <OverPack>
         <Header>{data.title}</Header>
         <ProjectsWrapper key="project-cards" animation={animation}>
           {data.items.map((item) => (
@@ -28,13 +28,14 @@ function Projects(props) {
             </Card>
           ))}
         </ProjectsWrapper>
-      </PaddingOverPack>
+      </OverPack>
     </Container>
   );
 }
 
 const Container = styled.div`
   position: relative;
+  padding: 32px;
 `;
 
 const ProjectsWrapper = styled(TweenOne)`

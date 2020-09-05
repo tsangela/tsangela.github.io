@@ -4,15 +4,18 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 import theme from '../../resources/theme.json';
 
-export const ViewContainer = styled.div`
+export const CenterWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ViewContainer = styled(CenterWrapper)`
+  flex-direction: column;
+
   position: relative;
   width: 100%;
   height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `;
 
 export const PaddingOverPack = styled(OverPack)`

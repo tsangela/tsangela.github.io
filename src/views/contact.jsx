@@ -42,6 +42,7 @@ const getIcon = (type) => {
 const renderSocials = (socials) =>
   Object.keys(socials).map((type) => (
     <a
+      key={type}
       href={socials[type]}
       target="_blank"
       rel="noopener noreferrer"
