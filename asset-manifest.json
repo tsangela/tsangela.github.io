@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.37a85b26.chunk.css",
-    "main.js": "/static/js/main.0abfd853.chunk.js",
-    "main.js.map": "/static/js/main.0abfd853.chunk.js.map",
+    "main.css": "/static/css/main.5935026f.chunk.css",
+    "main.js": "/static/js/main.43760632.chunk.js",
+    "main.js.map": "/static/js/main.43760632.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.038c016d.js",
     "runtime-main.js.map": "/static/js/runtime-main.038c016d.js.map",
-    "static/js/2.a180aee8.chunk.js": "/static/js/2.a180aee8.chunk.js",
-    "static/js/2.a180aee8.chunk.js.map": "/static/js/2.a180aee8.chunk.js.map",
+    "static/js/2.e0fe8145.chunk.js": "/static/js/2.e0fe8145.chunk.js",
+    "static/js/2.e0fe8145.chunk.js.map": "/static/js/2.e0fe8145.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.5ebc851a3a6413fb20cf6458f8e14338.js": "/precache-manifest.5ebc851a3a6413fb20cf6458f8e14338.js",
+    "precache-manifest.90fa06099274de9bd9e317cf61dbd707.js": "/precache-manifest.90fa06099274de9bd9e317cf61dbd707.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.37a85b26.chunk.css.map": "/static/css/main.37a85b26.chunk.css.map",
-    "static/js/2.a180aee8.chunk.js.LICENSE.txt": "/static/js/2.a180aee8.chunk.js.LICENSE.txt",
+    "static/css/main.5935026f.chunk.css.map": "/static/css/main.5935026f.chunk.css.map",
+    "static/js/2.e0fe8145.chunk.js.LICENSE.txt": "/static/js/2.e0fe8145.chunk.js.LICENSE.txt",
     "static/media/alegna.png": "/static/media/alegna.f0995943.png",
+    "static/media/angela-tsang-resume.pdf": "/static/media/angela-tsang-resume.bb4c18e9.pdf",
+    "static/media/angela-tsang-resume.png": "/static/media/angela-tsang-resume.cf1f8921.png",
     "static/media/cognitive.png": "/static/media/cognitive.ede25126.png",
     "static/media/confessions-1.png": "/static/media/confessions-1.a2df1247.png",
     "static/media/connect-four.png": "/static/media/connect-four.85ac525b.png",
-    "static/media/contact.1682d5fd.svg": "/static/media/contact.1682d5fd.svg",
+    "static/media/contact.42d03f99.svg": "/static/media/contact.42d03f99.svg",
     "static/media/flowers.png": "/static/media/flowers.3599dd51.png",
     "static/media/generic-image.png": "/static/media/generic-image.0a75ead6.png",
     "static/media/hungry-cat.png": "/static/media/hungry-cat.5ab57bba.png",
@@ -29,8 +31,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.038c016d.js",
-    "static/js/2.a180aee8.chunk.js",
-    "static/css/main.37a85b26.chunk.css",
-    "static/js/main.0abfd853.chunk.js"
+    "static/js/2.e0fe8145.chunk.js",
+    "static/css/main.5935026f.chunk.css",
+    "static/js/main.43760632.chunk.js"
   ]
 }
