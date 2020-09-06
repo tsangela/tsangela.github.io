@@ -6,7 +6,7 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import { GithubFilled, LinkedinFilled, LinkOutlined } from '@ant-design/icons';
 
 import Header from '../components/header';
-import { IconButton } from '../components/buttons';
+import { PopButton } from '../components/buttons';
 import { ViewContainer } from '../components/styled';
 import { socialTypes } from '../resources/data';
 import { ReactComponent as Message } from '../resources/images/backgrounds/contact.svg';
@@ -48,7 +48,9 @@ const renderSocials = (socials) =>
       rel="noopener noreferrer"
       alt={`angela's ${type} profile`}
     >
-      <IconButton icon={getIcon(type)} color={theme.tertiary} size="large" />
+      <PopButton icon={getIcon(type)} color={theme.tertiary} size="large">
+        {type}
+      </PopButton>
     </a>
   ));
 
@@ -114,6 +116,7 @@ const ButtonsRow = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 16px;
 `;
 
 const ButtonsTween = styled(TweenOne)`

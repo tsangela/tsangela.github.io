@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import { lighten } from 'polished';
 import TweenOne from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
+import { EyeOutlined } from '@ant-design/icons';
 
 import Header from '../components/header';
 import { ViewContainer } from '../components/styled';
 import theme from '../resources/theme.json';
+import { OutlineButton } from '../components/buttons';
 
 const animation = {
   opacity: 0,
@@ -17,14 +19,31 @@ const animation = {
 
 function About(props) {
   const { data } = props;
+  const { id, title, portrait, biography, resume } = data;
   return (
-    <Container id={data.id}>
+    <Container id={id}>
       <OverPack>
-        <Header>{data.title}</Header>
+        <Header>{title}</Header>
         <TweenOne key="profile" animation={animation}>
           <Profile>
-            <Portrait src={data.portrait} alt="angela tsang's portrait" />
-            <Biography>{data.biography}</Biography>
+            <Portrait src={portrait} alt="angela tsang's portrait" />
+            <Biography>
+              {biography}
+              <a
+                href={resume.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                alt={'open resume in a new tab'}
+              >
+                <OutlineButton
+                  icon={<EyeOutlined />}
+                  color={theme.tertiary}
+                  size="large"
+                >
+                  resume
+                </OutlineButton>
+              </a>
+            </Biography>
           </Profile>
         </TweenOne>
       </OverPack>
@@ -61,19 +80,25 @@ const Portrait = styled.img`
   }
 `;
 
-const Biography = styled.p`
+const Biography = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   min-width: 300px;
   width: 50%;
-  margin-top: 32px;
-  padding: 16px;
-
-  line-height: 1.5;
-  letter-spacing: 1.5px;
+  margin: 32px;
+  padding: 0 16px 24px 16px;
 
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   color: black;
-  text-shadow: 0 0 10px white;
+
+  p {
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 10px white;
+  }
 `;
 
 export default About;

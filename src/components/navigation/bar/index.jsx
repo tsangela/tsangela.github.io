@@ -90,7 +90,7 @@ const NavLinkTitle = styled.div`
 
   &,
   ${NavLinkIcon}, ${NavLinkText} {
-    transition: 0.5s ease;
+    transition: 0.3s ease;
   }
 
   &:hover {

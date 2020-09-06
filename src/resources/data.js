@@ -1,8 +1,15 @@
 import React from 'react';
-import theme from './theme.json';
+import {
+  UserOutlined,
+  PhoneOutlined,
+  LaptopOutlined,
+  HomeOutlined,
+} from '@ant-design/icons';
 
 import Emoji from '../components/emoji';
 import { Highlight } from '../components/styled';
+
+import theme from './theme.json';
 import portrait from './images/alegna.png';
 import hungryCat from './images/previews/hungry-cat.png';
 import connectFour from './images/previews/connect-four.png';
@@ -12,15 +19,11 @@ import stylisr from './images/previews/stylisr.png';
 import confessions from './images/previews/confessions-1.png';
 import tinyAnalysis from './images/previews/tiny-analysis.png';
 import cogitive from './images/previews/cognitive.png';
-import {
-  UserOutlined,
-  PhoneOutlined,
-  LaptopOutlined,
-  HomeOutlined,
-} from '@ant-design/icons';
+import resumePng from './resume/angela-tsang-resume.png';
+import resumePdf from './resume/angela-tsang-resume.pdf';
 
 export const idMap = {
-  landing: { id: 'landing', icon: <HomeOutlined /> },
+  landing: { id: 'home', icon: <HomeOutlined /> },
   projects: { id: 'projects', icon: <LaptopOutlined /> },
   about: { id: 'about', icon: <UserOutlined /> },
   contact: { id: 'contact', icon: <PhoneOutlined /> },
@@ -270,28 +273,37 @@ export const projectsData = {
 export const aboutData = {
   id: idMap.about.id,
   title: 'about me',
-  biography: (
-    <span>
-      Hello, my name is <Highlight>Angela Tsang</Highlight>, and welcome to my
-      website! It's very nice to meet you! <Emoji emoji="✨" />
-      <br />
-      <br />I am a{' '}
-      <Highlight>
-        4th Year B.Sc. Major in Computer Science <Emoji emoji="🎓" />
-      </Highlight>{' '}
-      at the beautiful University of British Columbia 🏫. When I'm not
-      click-clacking on the keyboard ⌨️, I like to spend time with my cute lil
-      doggos <Emoji emoji="🐕" />, play badminton <Emoji emoji="🏸" />, and go
-      on food adventures <Emoji emoji="🍙" />.
-      <br />
-      <br />I am currently looking for{' '}
-      <Highlight>
-        full-time software engineer roles <Emoji emoji="💻" />
-      </Highlight>{' '}
-      starting in <Highlight>Summer 2021</Highlight>.
-    </span>
-  ),
   portrait: portrait,
+  biography: (
+    <div>
+      <p>
+        Hello, my name is <Highlight>Angela Tsang</Highlight>, and welcome to my
+        website! It's very nice to meet you! <Emoji emoji="✨" />
+      </p>
+      <p>
+        I am a{' '}
+        <Highlight>
+          4th Year B.Sc. Major in Computer Science <Emoji emoji="🎓" />
+        </Highlight>{' '}
+        at the beautiful University of British Columbia 🏫. When I'm not
+        click-clacking on the keyboard ⌨️, I like to spend time with my cute lil
+        doggos <Emoji emoji="🐕" />, play badminton <Emoji emoji="🏸" />, and go
+        on food adventures <Emoji emoji="🍙" />.
+      </p>
+      <p>
+        I am currently looking for{' '}
+        <Highlight>
+          full-time software engineer roles <Emoji emoji="💻" />
+        </Highlight>{' '}
+        starting in <Highlight>Summer 2021</Highlight>. Check out my resume
+        below. Don't be shy — keep copy for yourself <Emoji emoji="😉" />.
+      </p>
+    </div>
+  ),
+  resume: {
+    png: resumePng,
+    pdf: resumePdf,
+  },
 };
 
 export const contactData = {

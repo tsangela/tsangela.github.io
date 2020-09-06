@@ -7,6 +7,7 @@ import {
   StyledGhostButton,
   StyledIconButton,
   ButtonIcon,
+  ContentWrapper,
 } from './style';
 import theme from '../../resources/theme.json';
 
@@ -14,8 +15,10 @@ export function FilledButton(props) {
   const { icon, children, ...rest } = props;
   return (
     <StyledFilledButton {...rest}>
-      <ButtonIcon>{icon}</ButtonIcon>
-      {children}
+      <ContentWrapper>
+        <ButtonIcon>{icon}</ButtonIcon>
+        <span>{children}</span>
+      </ContentWrapper>
     </StyledFilledButton>
   );
 }
@@ -24,8 +27,10 @@ export function OutlineButton(props) {
   const { icon, children, ...rest } = props;
   return (
     <StyledOutlineButton {...rest}>
-      <ButtonIcon>{icon}</ButtonIcon>
-      {children}
+      <ContentWrapper>
+        <ButtonIcon>{icon}</ButtonIcon>
+        <span>{children}</span>
+      </ContentWrapper>
     </StyledOutlineButton>
   );
 }
@@ -34,8 +39,10 @@ export function PopButton(props) {
   const { icon, children, ...rest } = props;
   return (
     <StyledPopButton {...rest}>
-      <ButtonIcon>{icon}</ButtonIcon>
-      {children}
+      <ContentWrapper>
+        <ButtonIcon>{icon}</ButtonIcon>
+        <span>{children}</span>
+      </ContentWrapper>
     </StyledPopButton>
   );
 }
@@ -44,8 +51,10 @@ export function GhostButton(props) {
   const { icon, children, ...rest } = props;
   return (
     <StyledGhostButton {...rest}>
-      <ButtonIcon>{icon}</ButtonIcon>
-      {children}
+      <ContentWrapper>
+        <ButtonIcon>{icon}</ButtonIcon>
+        <span>{children}</span>
+      </ContentWrapper>
     </StyledGhostButton>
   );
 }

@@ -2,6 +2,10 @@ import styled, { css } from 'styled-components';
 import { lighten, darken, transparentize } from 'polished';
 
 const BaseButton = styled.button`
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 
   padding: 8px 24px;
@@ -12,7 +16,7 @@ const BaseButton = styled.button`
 
   font-size: ${(props) => props.size};
   text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 2px 2px ${(props) => lighten(0.1, props.color)};
+  box-shadow: 0px 2px 4px ${(props) => lighten(0.1, props.color)};
 
   transition: 0.2s ease;
 `;
@@ -90,5 +94,16 @@ export const StyledIconButton = styled.button`
 `;
 
 export const ButtonIcon = styled.span`
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin-right: 6px;
+`;
+
+export const ContentWrapper = styled.span`
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
