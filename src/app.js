@@ -14,7 +14,7 @@ import Contact from './views/contact';
 import NavigationBar from './components/navigation/bar';
 
 function App() {
-  const trimHash = (hash) => hash.charAt(0) === '#' && hash.substring(1);
+  const trimHash = (hash) => (hash.charAt(0) === '#' ? hash.substring(1) : '');
 
   const [isMobile, setIsMobile] = useState(false);
   const [id, setId] = useState(trimHash(window.location.hash));
@@ -22,15 +22,12 @@ function App() {
   const scrollListener = (e) => {
     const { hash } = e.path[0].location;
     const trimmed = trimHash(hash);
-    console.log(trimmed, id);
     if (trimmed !== id) {
       setId(trimmed);
-      console.log(`updated id to ${trimmed}`);
     }
   };
 
   useEffect(() => {
-    console.log(`current id: ${id}`);
     enquireScreen((b) => setIsMobile(!!b));
     window.addEventListener('scroll', scrollListener);
     return () => {

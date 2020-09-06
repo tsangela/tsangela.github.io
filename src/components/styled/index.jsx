@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { lighten } from 'polished';
-import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 import theme from '../../resources/theme.json';
 
@@ -15,19 +14,17 @@ export const ViewContainer = styled(CenterWrapper)`
 
   position: relative;
   width: 100%;
-  height: 100vh;
-`;
-
-export const PaddingOverPack = styled(OverPack)`
-  padding: 32px;
+  min-height: 100vh;
+  padding: 64px 0;
 `;
 
 export const Highlight = styled.span`
-  background: ${(props) => props.color || theme.primary};
+  background: ${(props) => props.color || 'white'};
   transition: 0.2s ease;
 
   &:hover {
-    background: ${(props) => props.hoverColor || theme.bright};
+    background: ${(props) => props.hoverColor || theme.tertiary};
+    color: white;
   }
 `;
 

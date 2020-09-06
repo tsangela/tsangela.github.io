@@ -1,6 +1,7 @@
 import React from 'react';
 import theme from './theme.json';
 
+import Emoji from '../components/emoji';
 import { Highlight } from '../components/styled';
 import portrait from './images/alegna.png';
 import hungryCat from './images/previews/hungry-cat.png';
@@ -272,11 +273,22 @@ export const aboutData = {
   biography: (
     <span>
       Hello, my name is <Highlight>Angela Tsang</Highlight>, and welcome to my
-      website! It's very nice to meet you! I am a{' '}
-      <Highlight>4th Year B.Sc. Major in Computer Science</Highlight> at the
-      beautiful University of British Columbia. When I'm not click-clacking on
-      the keyboard, I like to pet my cute lil doggos, play badminton, and go on
-      food adventures. ✨
+      website! It's very nice to meet you! <Emoji emoji="✨" />
+      <br />
+      <br />I am a{' '}
+      <Highlight>
+        4th Year B.Sc. Major in Computer Science <Emoji emoji="🎓" />
+      </Highlight>{' '}
+      at the beautiful University of British Columbia 🏫. When I'm not
+      click-clacking on the keyboard ⌨️, I like to spend time with my cute lil
+      doggos <Emoji emoji="🐕" />, play badminton <Emoji emoji="🏸" />, and go
+      on food adventures <Emoji emoji="🍙" />.
+      <br />
+      <br />I am currently looking for{' '}
+      <Highlight>
+        full-time software engineer roles <Emoji emoji="💻" />
+      </Highlight>{' '}
+      starting in <Highlight>Summer 2021</Highlight>.
     </span>
   ),
   portrait: portrait,

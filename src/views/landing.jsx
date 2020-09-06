@@ -56,7 +56,7 @@ function Landing(props) {
             >
               <Header key="intro-header">
                 <span>
-                  <Texty top="top" mode="smooth">
+                  <Texty type="mask-top" mode="smooth">
                     {data.title}
                   </Texty>
                 </span>

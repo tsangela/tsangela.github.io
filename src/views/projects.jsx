@@ -35,7 +35,7 @@ function Projects(props) {
 
 const Container = styled.div`
   position: relative;
-  padding: 32px;
+  padding: 64px;
 `;
 
 const ProjectsWrapper = styled(TweenOne)`

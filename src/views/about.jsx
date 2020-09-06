@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { lighten } from 'polished';
 import TweenOne from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 import Header from '../components/header';
-import { SvgBackground } from '../components/svg-backgrounds';
 import { ViewContainer } from '../components/styled';
 import theme from '../resources/theme.json';
 
@@ -20,7 +20,6 @@ function About(props) {
   return (
     <Container id={data.id}>
       <OverPack>
-        <SvgBackground />
         <Header>{data.title}</Header>
         <TweenOne key="profile" animation={animation}>
           <Profile>
@@ -35,7 +34,7 @@ function About(props) {
 
 const Container = styled(ViewContainer)`
   // background: linear-gradient(135deg, ${theme.tertiary}, ${theme.secondary});
-  background: ${theme['background-secondary']};
+  background: ${lighten(0.2, theme.tertiary)};
 `;
 
 const Profile = styled.div`
@@ -74,6 +73,7 @@ const Biography = styled.p`
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   color: black;
+  text-shadow: 0 0 10px white;
 `;
 
 export default About;
