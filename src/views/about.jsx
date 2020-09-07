@@ -37,7 +37,7 @@ function About(props) {
               >
                 <OutlineButton
                   icon={<EyeOutlined />}
-                  color={theme.tertiary}
+                  color={theme.thistle}
                   size="large"
                 >
                   resume
@@ -52,8 +52,8 @@ function About(props) {
 }
 
 const Container = styled(ViewContainer)`
-  // background: linear-gradient(135deg, ${theme.tertiary}, ${theme.secondary});
-  background: ${lighten(0.2, theme.tertiary)};
+  // background: linear-gradient(135deg, ${theme.thistle}, ${theme.secondary});
+  background: ${lighten(0.2, theme.thistle)};
 `;
 
 const Profile = styled.div`

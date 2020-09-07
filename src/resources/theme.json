@@ -2,7 +2,8 @@
   "background": "#edf4fd",
   "primary": "#a7d0e8",
   "secondary": "#9db6c9",
-  "tertiary": "#C9B1BD",
+  "thistle": "#C9B1BD",
+  "celadon": "#AFDDB5",
   "light": "#ebedf0",
   "bright": "#ffd55e",
   "bright-secondary": "#48c0d8"

@@ -44,7 +44,7 @@ export const landingData = {
   id: idMap.landing.id,
   title: 'hello, world!',
   text:
-    "thanks for dropping by! here, you will find all the tech-y stuff i've been working on.",
+    "thanks for dropping by! here, i will show you all the tech-y stuff i've been working on and try to convince you to hire me.",
   button: {
     color: theme.secondary,
     children: 'see projects',
@@ -72,7 +72,7 @@ export const projectsData = {
         'apollo',
         'mongodb',
         'mongoose',
-        'ant.desgn',
+        'ant design',
       ],
       title: 'stylisr',
       subtitle: 'fashion network',
@@ -122,7 +122,7 @@ export const projectsData = {
       image: confessions,
       links: {
         [linkTypes.demo]: 'https://uni-confessions.herokuapp.com/',
-        [linkTypes.code]: 'https://github.com/tsangela/assignment-2/',
+        [linkTypes.code]: 'https://github.com/tsangela/uni-confessions/',
       },
     },
     {
@@ -201,7 +201,7 @@ export const projectsData = {
         start: 'Jan 2019',
         end: '',
       },
-      technologies: ['react', 'javascript', 'microsoft azure'],
+      technologies: ['react', 'ant design', 'javascript', 'microsoft azure'],
       title: 'bestfriendbot',
       subtitle: 'confidence-training chat bot',
       description: (
@@ -251,7 +251,7 @@ export const projectsData = {
         start: 'Mar 2018',
         end: 'May 2018',
       },
-      technologies: ['java'],
+      technologies: ['java', 'lombok', 'junit', 'assertj'],
       title: 'hungry cat',
       subtitle: 'snake game',
       description: (

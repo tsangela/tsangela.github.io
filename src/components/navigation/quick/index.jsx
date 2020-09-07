@@ -43,7 +43,7 @@ const LinkTitle = styled.span`
   padding: 2px 6px;
   border-radius: 100px;
 
-  background: linear-gradient(to right, ${theme.primary}, ${theme.tertiary});
+  background: linear-gradient(to right, ${theme.primary}, ${theme.thistle});
   color: white;
   // text-shadow: 0 0 10px #a7d0e8;
 `;

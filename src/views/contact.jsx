@@ -48,7 +48,7 @@ const renderSocials = (socials) =>
       rel="noopener noreferrer"
       alt={`angela's ${type} profile`}
     >
-      <PopButton icon={getIcon(type)} color={theme.tertiary} size="large">
+      <PopButton icon={getIcon(type)} color={theme.thistle} size="large">
         {type}
       </PopButton>
     </a>

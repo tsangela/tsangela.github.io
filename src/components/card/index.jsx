@@ -1,71 +1,44 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import {
-  GlobalOutlined,
-  CodeOutlined,
-  LinkOutlined,
-  DownloadOutlined,
-} from '@ant-design/icons';
 
-import { FilledButton } from '../buttons';
 import { Tag } from '../styled';
-import { linkTypes } from '../../resources/data';
+import { formatDate, renderLinkButtons } from '../../resources/utils';
 import theme from '../../resources/theme.json';
 import generic from '../../resources/images/previews/generic-image.png';
-
-const formatDate = (date) =>
-  date && (date.end ? `${date.start} - ${date.end}` : date.start);
-
-const getIcon = (type) => {
-  switch (type) {
-    case linkTypes.demo:
-      return <GlobalOutlined />;
-    case linkTypes.code:
-      return <CodeOutlined />;
-    case linkTypes.download:
-      return <DownloadOutlined />;
-    default:
-      return <LinkOutlined />;
-  }
-};
-
-const renderButtons = (links) =>
-  Object.keys(links).map((type) => (
-    <a
-      key={type}
-      href={links[type]}
-      target="_blank"
-      rel="noopener noreferrer"
-      alt={`go to ${type}`}
-    >
-      <FilledButton icon={getIcon(type)} size="small" color={theme.tertiary}>
-        {type}
-      </FilledButton>
-    </a>
-  ));
 
 function Card(props) {
   const [hovered, setHovered] = useState(false);
 
-  const { isMobile, item, children } = props;
+  const { isMobile, item, setSelectedItem, children } = props;
   const { title, date, image, links } = item;
 
+  const openModal = (event) => {
+    // if user did not click a link
+    if (!event.target.closest('button')) {
+      setSelectedItem(item);
+    }
+  };
+
   return (
-    <CardDiv
-      mobile={isMobile}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      <Preview src={image || generic} alt={`${title} preview`} />
-      <Expandable aria-expanded={hovered}>
-        <ContentWrapper>
-          <CardTitle>{title}</CardTitle>
-          <Tag>{formatDate(date)}</Tag>
-          <p>{children}</p>
-          <ButtonsWrapper>{renderButtons(links)}</ButtonsWrapper>
-        </ContentWrapper>
-      </Expandable>
-    </CardDiv>
+    <>
+      <CardDiv
+        mobile={isMobile}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        <Preview src={image || generic} alt={`${title} preview`} />
+        <Expandable aria-expanded={hovered} onClick={openModal}>
+          <ContentWrapper>
+            <CardTitle>{title}</CardTitle>
+            <Tag size="small">{formatDate(date)}</Tag>
+            <p>{children}</p>
+            <ButtonsWrapper>
+              {renderLinkButtons(links, 'small', theme.thistle)}
+            </ButtonsWrapper>
+          </ContentWrapper>
+        </Expandable>
+      </CardDiv>
+    </>
   );
 }
 
@@ -85,6 +58,7 @@ const Expandable = styled.div`
   line-height: 1.5;
 
   transition: 0.3s ease;
+  cursor: pointer;
 `;
 
 const CardDiv = styled.div`
@@ -103,7 +77,7 @@ const CardDiv = styled.div`
   transition: 0.2s ease;
 
   &:hover {
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
 
     ${Expandable} {
       max-height: 100%;
