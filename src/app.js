@@ -12,10 +12,9 @@ import {
 } from './resources/data';
 import Contact from './views/contact';
 import NavigationBar from './components/navigation/bar';
+import { trimHash } from './resources/utils';
 
 function App() {
-  const trimHash = (hash) => (hash.charAt(0) === '#' ? hash.substring(1) : '');
-
   const [isMobile, setIsMobile] = useState(false);
   const [id, setId] = useState(trimHash(window.location.hash));
 

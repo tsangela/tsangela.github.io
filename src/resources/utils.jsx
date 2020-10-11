@@ -39,3 +39,6 @@ export const renderLinkButtons = (links, size, color) =>
       </FilledButton>
     </a>
   ));
+
+export const trimHash = (hash) =>
+  hash.charAt(0) === '#' ? hash.substring(1) : '';

@@ -36,7 +36,7 @@ function Modal(props) {
         <p>{description}</p>
         <TechWrapper>
           {technologies.sort().map((tech) => (
-            <TechTag size="small">{tech}</TechTag>
+            <TechTag key={tech} size="small">{tech}</TechTag>
           ))}
         </TechWrapper>
         <SplitWrapper>
@@ -44,7 +44,7 @@ function Modal(props) {
           <ContentWrapper>
             <ul>
               {contributions.map((contribution) => (
-                <li>{contribution}</li>
+                <li key={contribution}>{contribution}</li>
               ))}
             </ul>
             <ButtonsWrapper>
@@ -83,9 +83,9 @@ const PopupContainer = styled.div`
   min-width: 350px;
 
   background: white;
-  padding: 16px 32px 32px;
+  padding: 20px 40px 40px;
   border-radius: 4px;
-  border-top: 40px solid ${theme.thistle};
+  border-top: 44px solid ${theme.thistle};
 
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
   animation: 0.25s ${zoomFadeIn};
@@ -151,7 +151,7 @@ const SplitWrapper = styled.div`
     width: 100%;
     object-fit: cover;
     object-position: top;
-    height: 220px;
+    height: 100%;
     border-radius: 4px;
   }
 

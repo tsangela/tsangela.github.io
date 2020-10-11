@@ -44,7 +44,7 @@ export const landingData = {
   id: idMap.landing.id,
   title: 'hello, world!',
   text:
-    "thanks for dropping by! here, i will show you all the tech-y stuff i've been working on and try to convince you to hire me.",
+    "my name is angela tsang. thanks for dropping by! here, i will show you all the tech-y stuff i've been working on and try to convince you to hire me.",
   button: {
     color: theme.secondary,
     children: 'see projects',
@@ -296,7 +296,7 @@ export const aboutData = {
           full-time software engineer roles <Emoji emoji="💻" />
         </Highlight>{' '}
         starting in <Highlight>Summer 2021</Highlight>. Check out my resume
-        below. Don't be shy — keep copy for yourself <Emoji emoji="😉" />.
+        below. Don't be shy — keep a copy for yourself <Emoji emoji="😉" />.
       </p>
     </div>
   ),

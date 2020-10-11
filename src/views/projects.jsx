@@ -17,8 +17,8 @@ const animation = {
 
 function Projects(props) {
   const [selectedItem, setSelectedItem] = useState();
-
   const { isMobile, data } = props;
+
   return (
     <Container id={data.id}>
       <SvgBackground />
