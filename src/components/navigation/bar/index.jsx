@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styled, { css } from 'styled-components';
 import { Parallax } from 'rc-scroll-anim';
 import Link from 'rc-scroll-anim/lib/ScrollLink';
@@ -7,15 +8,16 @@ import { idMap } from '../../../resources/data';
 import theme from '../../../resources/theme.json';
 
 function NavigationBar(props) {
+  const { tab } = useSelector((state) => state.reducer);
   const { isMobile } = props;
 
-  const renderLinks = (isMobile) =>
+  const renderLinks = () =>
     Object.keys(idMap).map((key) => {
-      const id = idMap[key].id;
-      const icon = idMap[key].icon;
+      const { id } = idMap[key];
+      const { icon } = idMap[key];
       return (
-        <Link key={`${id}-link`} to={id} toHash={true}>
-          <NavLinkTitle active={props.activeTab === id} mobile={isMobile}>
+        <Link key={`${id}-link`} to={id} toHash>
+          <NavLinkTitle active={tab === id} mobile={isMobile}>
             <NavLinkIcon>{icon}</NavLinkIcon>
             <NavLinkText>{id}</NavLinkText>
           </NavLinkTitle>
@@ -30,7 +32,7 @@ function NavigationBar(props) {
         style={{ opacity: 0 }}
       >
         <FixedWrapper mobile={isMobile}>
-          <NavContainer>{renderLinks(isMobile)}</NavContainer>
+          <NavContainer>{renderLinks()}</NavContainer>
         </FixedWrapper>
       </Parallax>
     </div>
@@ -94,7 +96,7 @@ const NavLinkTitle = styled.div`
   }
 
   &:hover {
-    ${activeStyle}
+    border-color: ${theme.primary};
   }
 
   ${(props) => props.active && activeStyle}

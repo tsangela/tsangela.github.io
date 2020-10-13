@@ -44,7 +44,7 @@ export const landingData = {
   id: idMap.landing.id,
   title: 'hello, world!',
   text:
-    "my name is angela tsang. thanks for dropping by! here, i will show you all the tech-y stuff i've been working on and try to convince you to hire me.",
+    "thanks for dropping by! my name is angela tsang. here, i will show you all the tech-y stuff i've been working on and try to convince you to hire me.",
   button: {
     color: theme.secondary,
     children: 'see projects',
@@ -158,8 +158,8 @@ export const projectsData = {
       subtitle: 'eatery decider',
       description: (
         <span>
-          No more saying "no u!" Find a food place nearby in an instant, know
-          exactly where to eat.
+          No more saying &quot;no u!&quot; Find a food place nearby in an
+          instant, know exactly where to eat.
         </span>
       ),
       contributions: [
@@ -273,19 +273,19 @@ export const projectsData = {
 export const aboutData = {
   id: idMap.about.id,
   title: 'about me',
-  portrait: portrait,
+  portrait,
   biography: (
     <div>
       <p>
         Hello, my name is <Highlight>Angela Tsang</Highlight>, and welcome to my
-        website! It's very nice to meet you! <Emoji emoji="✨" />
+        website! It&apos;s very nice to meet you! <Emoji emoji="✨" />
       </p>
       <p>
         I am a{' '}
         <Highlight>
           4th Year B.Sc. Major in Computer Science <Emoji emoji="🎓" />
         </Highlight>{' '}
-        at the beautiful University of British Columbia 🏫. When I'm not
+        at the beautiful University of British Columbia 🏫. When I&apos;m not
         click-clacking on the keyboard ⌨️, I like to spend time with my cute lil
         doggos <Emoji emoji="🐕" />, play badminton <Emoji emoji="🏸" />, and go
         on food adventures <Emoji emoji="🍙" />.
@@ -296,7 +296,8 @@ export const aboutData = {
           full-time software engineer roles <Emoji emoji="💻" />
         </Highlight>{' '}
         starting in <Highlight>Summer 2021</Highlight>. Check out my resume
-        below. Don't be shy — keep a copy for yourself <Emoji emoji="😉" />.
+        below. Don&apos;t be shy — keep a copy for yourself <Emoji emoji="😉" />
+        .
       </p>
     </div>
   ),

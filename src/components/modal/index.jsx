@@ -2,12 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import { CloseOutlined } from '@ant-design/icons';
 
+import { useDispatch, useSelector } from 'react-redux';
 import { Tag, RoundedTag, zoomFadeIn, fadeIn } from '../styled';
 import { formatDate, renderLinkButtons } from '../../resources/utils';
 import theme from '../../resources/theme.json';
+import { selectItem } from '../../store/actions';
 
-function Modal(props) {
-  const { item, setItem } = props;
+function Modal() {
+  const { selectedItem } = useSelector((state) => state.reducer);
+  const dispatch = useDispatch();
+
+  if (!selectedItem) {
+    return null;
+  }
+
   const {
     date,
     technologies,
@@ -17,9 +25,9 @@ function Modal(props) {
     contributions,
     image,
     links,
-  } = item;
+  } = selectedItem;
 
-  const hideModal = () => setItem(null);
+  const hideModal = () => dispatch(selectItem(null));
 
   return (
     <Wrapper>
@@ -36,7 +44,9 @@ function Modal(props) {
         <p>{description}</p>
         <TechWrapper>
           {technologies.sort().map((tech) => (
-            <TechTag key={tech} size="small">{tech}</TechTag>
+            <TechTag key={tech} size="small">
+              {tech}
+            </TechTag>
           ))}
         </TechWrapper>
         <SplitWrapper>
@@ -115,6 +125,10 @@ const TitleWrapper = styled.div`
   flex-wrap: wrap-reverse;
 
   margin-bottom: 8px;
+
+  h1 {
+    margin-right: 8px;
+  }
 `;
 
 const TagsWrapper = styled.div`
@@ -153,6 +167,7 @@ const SplitWrapper = styled.div`
     object-position: top;
     height: 100%;
     border-radius: 4px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
   }
 
   ul {

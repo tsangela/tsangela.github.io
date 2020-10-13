@@ -8,8 +8,8 @@ import theme from '../../../resources/theme.json';
 
 const renderLinks = (isMobile) =>
   Object.keys(idMap).map((key) => {
-    const id = idMap[key].id;
-    const icon = idMap[key].icon;
+    const { id } = idMap[key];
+    const { icon } = idMap[key];
     return (
       <LinkWrapper key={`${id}-nav-item`} mobile={isMobile}>
         <HoverLink key={id} to={id} toHash={false}>

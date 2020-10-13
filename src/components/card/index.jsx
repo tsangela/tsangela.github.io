@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 
 import { Tag } from '../styled';
 import { formatDate, renderLinkButtons } from '../../resources/utils';
 import theme from '../../resources/theme.json';
 import generic from '../../resources/images/previews/generic-image.png';
+import { selectItem } from '../../store/actions';
 
 function Card(props) {
   const [hovered, setHovered] = useState(false);
 
-  const { isMobile, item, setSelectedItem, children } = props;
+  const dispatch = useDispatch();
+
+  const { isMobile, item, children } = props;
   const { title, date, image, links } = item;
 
   const openModal = (event) => {
     // if user did not click a link
     if (!event.target.closest('button')) {
-      setSelectedItem(item);
+      dispatch(selectItem(item));
     }
   };
 
