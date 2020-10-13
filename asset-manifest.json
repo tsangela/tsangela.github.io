@@ -1,20 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.5935026f.chunk.css",
-    "main.js": "/static/js/main.69839a4e.chunk.js",
-    "main.js.map": "/static/js/main.69839a4e.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.038c016d.js",
-    "runtime-main.js.map": "/static/js/runtime-main.038c016d.js.map",
-    "static/js/2.a3dbacb4.chunk.js": "/static/js/2.a3dbacb4.chunk.js",
-    "static/js/2.a3dbacb4.chunk.js.map": "/static/js/2.a3dbacb4.chunk.js.map",
+    "main.js": "/static/js/main.c6629229.chunk.js",
+    "main.js.map": "/static/js/main.c6629229.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.eae2ceef.js",
+    "runtime-main.js.map": "/static/js/runtime-main.eae2ceef.js.map",
+    "static/js/2.4779b40d.chunk.js": "/static/js/2.4779b40d.chunk.js",
+    "static/js/2.4779b40d.chunk.js.map": "/static/js/2.4779b40d.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.ef5aca0226082a81fac42bfd387eec34.js": "/precache-manifest.ef5aca0226082a81fac42bfd387eec34.js",
+    "precache-manifest.a6ff19722f2857cc31e05c5a5e141dd8.js": "/precache-manifest.a6ff19722f2857cc31e05c5a5e141dd8.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.5935026f.chunk.css.map": "/static/css/main.5935026f.chunk.css.map",
-    "static/js/2.a3dbacb4.chunk.js.LICENSE.txt": "/static/js/2.a3dbacb4.chunk.js.LICENSE.txt",
+    "static/js/2.4779b40d.chunk.js.LICENSE.txt": "/static/js/2.4779b40d.chunk.js.LICENSE.txt",
     "static/media/alegna.png": "/static/media/alegna.f0995943.png",
-    "static/media/angela-tsang-resume.pdf": "/static/media/angela-tsang-resume.bb4c18e9.pdf",
-    "static/media/angela-tsang-resume.png": "/static/media/angela-tsang-resume.cf1f8921.png",
+    "static/media/angela-tsang-resume.pdf": "/static/media/angela-tsang-resume.24c7809c.pdf",
     "static/media/cognitive.png": "/static/media/cognitive.ede25126.png",
     "static/media/confessions-1.png": "/static/media/confessions-1.a2df1247.png",
     "static/media/connect-four.png": "/static/media/connect-four.85ac525b.png",
@@ -30,9 +29,9 @@
     "static/media/you-decide-0.png": "/static/media/you-decide-0.7c612666.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.038c016d.js",
-    "static/js/2.a3dbacb4.chunk.js",
+    "static/js/runtime-main.eae2ceef.js",
+    "static/js/2.4779b40d.chunk.js",
     "static/css/main.5935026f.chunk.css",
-    "static/js/main.69839a4e.chunk.js"
+    "static/js/main.c6629229.chunk.js"
   ]
 }
