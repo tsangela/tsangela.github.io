@@ -6,7 +6,7 @@ import {
   DownloadOutlined,
 } from '@ant-design/icons';
 
-import { linkTypes } from './data';
+import { idMap, linkTypes } from './data';
 import { FilledButton } from '../components/buttons';
 
 export const formatDate = (date) =>
@@ -40,5 +40,6 @@ export const renderLinkButtons = (links, size, color) =>
     </a>
   ));
 
-export const trimHash = (hash) =>
-  hash.charAt(0) === '#' ? hash.substring(1) : '';
+const trimHash = (hash) => (hash.charAt(0) === '#' ? hash.substring(1) : '');
+
+export const getTab = (hash) => trimHash(hash) || idMap.landing.id;

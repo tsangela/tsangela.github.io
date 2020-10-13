@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
 import types from './types';
-import { trimHash } from '../resources/utils';
+import { getTab } from '../resources/utils';
 import { idMap } from '../resources/data';
 
 const INITIAL_STATE = {
-  tab: trimHash(window.location.hash),
+  tab: getTab(window.location.hash),
   selectedItem: null,
 };
 

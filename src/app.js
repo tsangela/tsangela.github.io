@@ -13,7 +13,7 @@ import {
 } from './resources/data';
 import Contact from './views/contact';
 import NavigationBar from './components/navigation/bar';
-import { trimHash } from './resources/utils';
+import { getTab } from './resources/utils';
 import { setTab } from './store/actions';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
 
   const handleTabChange = (e) => {
     const { hash } = e.path[0].location;
-    const trimmed = trimHash(hash);
+    const trimmed = getTab(hash);
     if (trimmed !== tab) {
       dispatch(setTab(trimmed));
     }
