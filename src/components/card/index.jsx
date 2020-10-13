@@ -29,9 +29,10 @@ function Card(props) {
         mobile={isMobile}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
+        onClick={openModal}
       >
         <Preview src={image || generic} alt={`${title} preview`} />
-        <Expandable aria-expanded={hovered} onClick={openModal}>
+        <Expandable aria-expanded={hovered}>
           <ContentWrapper>
             <CardTitle>{title}</CardTitle>
             <Tag size="small">{formatDate(date)}</Tag>
@@ -62,7 +63,6 @@ const Expandable = styled.div`
   line-height: 1.5;
 
   transition: 0.3s ease;
-  cursor: pointer;
 `;
 
 const CardDiv = styled.div`
@@ -79,6 +79,7 @@ const CardDiv = styled.div`
 
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
   transition: 0.2s ease;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.05);

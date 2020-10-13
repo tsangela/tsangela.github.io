@@ -19,7 +19,6 @@ import stylisr from './images/previews/stylisr.png';
 import confessions from './images/previews/confessions-1.png';
 import tinyAnalysis from './images/previews/tiny-analysis.png';
 import cogitive from './images/previews/cognitive.png';
-import resumePng from './resume/angela-tsang-resume.png';
 import resumePdf from './resume/angela-tsang-resume.pdf';
 
 export const idMap = {
@@ -302,7 +301,6 @@ export const aboutData = {
     </div>
   ),
   resume: {
-    png: resumePng,
     pdf: resumePdf,
   },
 };
