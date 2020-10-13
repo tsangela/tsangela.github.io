@@ -107,7 +107,7 @@ const PopupContainer = styled.div`
 
 const CloseButton = styled(CloseOutlined)`
   position: absolute;
-  top: -26px;
+  top: -30px;
   right: 12px;
   color: white;
 
