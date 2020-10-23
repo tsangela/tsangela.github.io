@@ -13,7 +13,12 @@ function NavigationBar(props) {
       const { id, title } = idMap[key];
       const { icon } = idMap[key];
       return (
-        <NavLink key={`${id}-link`} to={id} onClick={() => setTab(id)}>
+        <NavLink
+          key={`${id}-link`}
+          to={id}
+          onClick={() => setTab(id)}
+          title={title}
+        >
           <NavLinkTitle active={id === tab} mobile={isMobile}>
             <NavLinkIcon>{icon}</NavLinkIcon>
             <NavLinkText>{title}</NavLinkText>
