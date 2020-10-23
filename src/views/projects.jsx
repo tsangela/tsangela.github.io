@@ -1,5 +1,4 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import TweenOne from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
@@ -17,7 +16,7 @@ const animation = {
 };
 
 function Projects(props) {
-  const { selectedItem } = useSelector((state) => state.reducer);
+  const [selectedItem, setSelectedItem] = useState(false);
   const { isMobile, data } = props;
 
   return (
@@ -27,12 +26,23 @@ function Projects(props) {
         <Header>{data.title}</Header>
         <ProjectsWrapper key="project-cards" animation={animation}>
           {data.items.map((item) => (
-            <Card key={item.title} isMobile={isMobile} item={item}>
+            <Card
+              key={item.title}
+              isMobile={isMobile}
+              item={item}
+              setSelectedItem={setSelectedItem}
+            >
               {item.description}
             </Card>
           ))}
         </ProjectsWrapper>
-        {selectedItem && <Modal isMobile={isMobile} />}
+        {selectedItem && (
+          <Modal
+            isMobile={isMobile}
+            selectedItem={selectedItem}
+            setSelectedItem={setSelectedItem}
+          />
+        )}
       </OverPack>
     </Container>
   );

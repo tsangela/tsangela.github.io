@@ -2,15 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { CloseOutlined } from '@ant-design/icons';
 
-import { useDispatch, useSelector } from 'react-redux';
 import { Tag, RoundedTag, zoomFadeIn, fadeIn } from '../styled';
 import { formatDate, renderLinkButtons } from '../../resources/utils';
 import theme from '../../resources/theme.json';
-import { selectItem } from '../../store/actions';
 
-function Modal() {
-  const { selectedItem } = useSelector((state) => state.reducer);
-  const dispatch = useDispatch();
+function Modal(props) {
+  const { selectedItem, setSelectedItem } = props;
 
   if (!selectedItem) {
     return null;
@@ -27,7 +24,7 @@ function Modal() {
     links,
   } = selectedItem;
 
-  const hideModal = () => dispatch(selectItem(null));
+  const hideModal = () => setSelectedItem(null);
 
   return (
     <Wrapper>
