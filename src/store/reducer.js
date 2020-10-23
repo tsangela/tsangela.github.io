@@ -5,7 +5,7 @@ import { getTab } from '../resources/utils';
 import { idMap } from '../resources/data';
 
 const INITIAL_STATE = {
-  tab: getTab(window.location.hash),
+  tab: getTab(window.location.pathname),
   selectedItem: null,
 };
 

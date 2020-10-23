@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { Parallax } from 'rc-scroll-anim';
-import Link from 'rc-scroll-anim/lib/ScrollLink';
 
 import { idMap } from '../../../resources/data';
 import theme from '../../../resources/theme.json';
@@ -16,12 +16,12 @@ function NavigationBar(props) {
       const { id } = idMap[key];
       const { icon } = idMap[key];
       return (
-        <Link key={`${id}-link`} to={id} toHash>
+        <NavLink key={`${id}-link`} to={id}>
           <NavLinkTitle active={tab === id} mobile={isMobile}>
             <NavLinkIcon>{icon}</NavLinkIcon>
             <NavLinkText>{id}</NavLinkText>
           </NavLinkTitle>
-        </Link>
+        </NavLink>
       );
     });
 
@@ -89,11 +89,7 @@ const NavLinkTitle = styled.div`
 
   max-width: 16px;
   border-bottom: 2px solid transparent;
-
-  &,
-  ${NavLinkIcon}, ${NavLinkText} {
-    transition: 0.3s ease;
-  }
+  transition: 0.3s ease;
 
   &:hover {
     border-color: ${theme.primary};

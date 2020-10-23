@@ -25,6 +25,15 @@ export const getIcon = (type) => {
   }
 };
 
+const BASE_URL = process.env.PUBLIC_URL;
+
+const trimPathName = (pathName) =>
+  pathName.charAt(0) === '/' ? pathName.substring(1) : '';
+
+export const getTab = (pathName) => trimPathName(pathName) || idMap.landing.id;
+
+export const getPath = (id) => `${BASE_URL}/${id}`;
+
 export const renderLinkButtons = (links, size, color) =>
   Object.keys(links).map((type) => (
     <a
@@ -39,7 +48,3 @@ export const renderLinkButtons = (links, size, color) =>
       </FilledButton>
     </a>
   ));
-
-const trimHash = (hash) => (hash.charAt(0) === '#' ? hash.substring(1) : '');
-
-export const getTab = (hash) => trimHash(hash) || idMap.landing.id;

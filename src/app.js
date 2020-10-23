@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Route } from 'react-router';
 import { enquireScreen } from 'enquire-js';
 
+import About from './views/about';
+import Contact from './views/contact';
 import Landing from './views/landing';
 import Projects from './views/projects';
-import About from './views/about';
+import NavigationBar from './components/navigation/bar';
 import {
   landingData,
   projectsData,
   aboutData,
   contactData,
+  idMap,
 } from './resources/data';
-import Contact from './views/contact';
-import NavigationBar from './components/navigation/bar';
-import { getTab } from './resources/utils';
+import { getPath, getTab } from './resources/utils';
 import { setTab } from './store/actions';
 
 function App() {
@@ -38,13 +41,29 @@ function App() {
   });
 
   return (
-    <>
+    <Router>
       <NavigationBar isMobile={isMobile} />
-      <Landing isMobile={isMobile} data={landingData} />
-      <Projects isMobile={isMobile} data={projectsData} />
-      <About isMobile={isMobile} data={aboutData} />
-      <Contact isMobile={isMobile} data={contactData} />
-    </>
+      <Route
+        exact
+        path={getPath(idMap.landing.id)}
+        render={() => <Landing isMobile={isMobile} data={landingData} />}
+      />
+      <Route
+        exact
+        path={getPath(idMap.projects.id)}
+        render={() => <Projects isMobile={isMobile} data={projectsData} />}
+      />
+      <Route
+        exact
+        path={getPath(idMap.about.id)}
+        render={() => <About isMobile={isMobile} data={aboutData} />}
+      />
+      <Route
+        exact
+        path={getPath(idMap.contact.id)}
+        render={() => <Contact isMobile={isMobile} data={contactData} />}
+      />
+    </Router>
   );
 }
 
