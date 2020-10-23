@@ -9,15 +9,16 @@ import Landing from './views/landing';
 import Projects from './views/projects';
 import NavigationBar from './components/navigation/bar';
 import {
-  landingData,
-  projectsData,
   aboutData,
   contactData,
+  landingData,
+  projectsData,
   idMap,
 } from './resources/data';
-import { getPath } from './resources/utils';
+import { getPath, getTab } from './resources/utils';
 
 function App() {
+  const [tab, setTab] = useState(getTab(window.location.pathname));
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ function App() {
 
   return (
     <Router>
-      <NavigationBar isMobile={isMobile} />
+      <NavigationBar isMobile={isMobile} tab={tab} setTab={setTab} />
       <Route
         exact
         path={getPath(idMap.landing.id)}

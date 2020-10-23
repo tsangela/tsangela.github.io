@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 import theme from '../../../resources/theme.json';
 import { idMap } from '../../../resources/data';
-import { getTab } from '../../../resources/utils';
 
 function NavigationBar(props) {
-  const [tab, setTab] = useState(getTab(window.location.pathname));
-  const { isMobile } = props;
+  const { isMobile, tab, setTab } = props;
 
   const renderLinks = () =>
     Object.keys(idMap).map((key) => {

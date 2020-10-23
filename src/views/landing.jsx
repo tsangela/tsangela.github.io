@@ -8,7 +8,6 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import { SvgBackground } from '../components/svg-backgrounds';
 import theme from '../resources/theme.json';
 import { ReactComponent as Laptop } from '../resources/images/backgrounds/laptop.svg';
-import QuickNavigation from '../components/navigation/quick';
 
 function Landing(props) {
   const { isMobile, data } = props;
@@ -63,8 +62,6 @@ function Landing(props) {
               </Header>
 
               <Intro key="intro-text">{data.text}</Intro>
-
-              <QuickNavigation key="quick-nav" mobile={isMobile} />
             </QueueAnim>
           </TextWrapper>
         </ContentWrapper>
@@ -128,6 +125,7 @@ const Header = styled.h1`
 
 const Intro = styled.p`
   line-height: 1.8;
+  font-size: 18px;
 `;
 
 const ImageWrapper = styled(TweenOne)`
