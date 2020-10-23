@@ -35,7 +35,6 @@ export const ViewContainer = styled(CenterWrapper)`
   position: relative;
   width: 100%;
   min-height: 100vh;
-  padding: 64px 0;
 `;
 
 export const Highlight = styled.span`

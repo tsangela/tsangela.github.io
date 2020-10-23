@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Route } from 'react-router';
 import { enquireScreen } from 'enquire-js';
@@ -16,28 +15,13 @@ import {
   contactData,
   idMap,
 } from './resources/data';
-import { getPath, getTab } from './resources/utils';
-import { setTab } from './store/actions';
+import { getPath } from './resources/utils';
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
-  const { tab } = useSelector((state) => state.reducer);
-  const dispatch = useDispatch();
-
-  const handleTabChange = (e) => {
-    const { hash } = e.path[0].location;
-    const trimmed = getTab(hash);
-    if (trimmed !== tab) {
-      dispatch(setTab(trimmed));
-    }
-  };
 
   useEffect(() => {
     enquireScreen((b) => setIsMobile(!!b));
-    window.addEventListener('scroll', handleTabChange);
-    return () => {
-      window.removeEventListener('scroll', handleTabChange);
-    };
   });
 
   return (

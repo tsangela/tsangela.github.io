@@ -1,41 +1,32 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink, withRouter } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import { Parallax } from 'rc-scroll-anim';
 
 import { idMap } from '../../../resources/data';
 import theme from '../../../resources/theme.json';
 
 function NavigationBar(props) {
-  const { tab } = useSelector((state) => state.reducer);
+  const [tab, setTab] = useState('');
   const { isMobile } = props;
 
   const renderLinks = () =>
     Object.keys(idMap).map((key) => {
-      const { id } = idMap[key];
+      const { id, title } = idMap[key];
       const { icon } = idMap[key];
       return (
-        <NavLink key={`${id}-link`} to={id}>
-          <NavLinkTitle active={tab === id} mobile={isMobile}>
+        <NavLink key={`${id}-link`} to={id} onClick={() => setTab(id)}>
+          <NavLinkTitle active={id === tab} mobile={isMobile}>
             <NavLinkIcon>{icon}</NavLinkIcon>
-            <NavLinkText>{id}</NavLinkText>
+            <NavLinkText>{title}</NavLinkText>
           </NavLinkTitle>
         </NavLink>
       );
     });
 
   return (
-    <div>
-      <Parallax
-        animation={{ opacity: 1, playScale: [0.5, 1.0] }}
-        style={{ opacity: 0 }}
-      >
-        <FixedWrapper mobile={isMobile}>
-          <NavContainer>{renderLinks()}</NavContainer>
-        </FixedWrapper>
-      </Parallax>
-    </div>
+    <FixedWrapper mobile={isMobile}>
+      <NavContainer>{renderLinks()}</NavContainer>
+    </FixedWrapper>
   );
 }
 
@@ -98,4 +89,4 @@ const NavLinkTitle = styled.div`
   ${(props) => props.active && activeStyle}
 `;
 
-export default NavigationBar;
+export default withRouter(NavigationBar);

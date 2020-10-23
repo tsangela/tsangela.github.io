@@ -22,10 +22,10 @@ import cogitive from './images/previews/cognitive.png';
 import resumePdf from './resume/angela-tsang-resume.pdf';
 
 export const idMap = {
-  landing: { id: '', icon: <HomeOutlined /> },
-  projects: { id: 'projects', icon: <LaptopOutlined /> },
-  about: { id: 'about', icon: <UserOutlined /> },
-  contact: { id: 'contact', icon: <PhoneOutlined /> },
+  landing: { id: '', title: 'home', icon: <HomeOutlined /> },
+  projects: { id: 'projects', title: 'projects', icon: <LaptopOutlined /> },
+  about: { id: 'about', title: 'about', icon: <UserOutlined /> },
+  contact: { id: 'contact', title: 'contact', icon: <PhoneOutlined /> },
 };
 
 export const linkTypes = {

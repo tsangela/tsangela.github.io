@@ -54,6 +54,7 @@ function About(props) {
 const Container = styled(ViewContainer)`
   // background: linear-gradient(135deg, ${theme.thistle}, ${theme.secondary});
   background: ${lighten(0.2, theme.thistle)};
+  padding: 64px 0;
 `;
 
 const Profile = styled.div`

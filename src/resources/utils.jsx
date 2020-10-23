@@ -6,7 +6,7 @@ import {
   DownloadOutlined,
 } from '@ant-design/icons';
 
-import { idMap, linkTypes } from './data';
+import { linkTypes } from './data';
 import { FilledButton } from '../components/buttons';
 
 export const formatDate = (date) =>
@@ -27,10 +27,8 @@ export const getIcon = (type) => {
 
 const BASE_URL = process.env.PUBLIC_URL;
 
-const trimPathName = (pathName) =>
+export const getTab = (pathName) =>
   pathName.charAt(0) === '/' ? pathName.substring(1) : '';
-
-export const getTab = (pathName) => trimPathName(pathName) || idMap.landing.id;
 
 export const getPath = (id) => `${BASE_URL}/${id}`;
 
