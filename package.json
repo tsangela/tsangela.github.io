@@ -5,9 +5,6 @@
   "homepage": "https://tsangela.github.io",
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
     "enquire-js": "^0.2.1",
     "gh-pages": "^3.1.0",
     "polished": "^3.6.5",
