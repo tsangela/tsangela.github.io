@@ -30,7 +30,7 @@ const BASE_URL = process.env.PUBLIC_URL;
 export const getTab = (pathName) =>
   pathName.charAt(0) === '/' ? pathName.substring(1) : '';
 
-export const getPath = (id) => `${BASE_URL}/${id}`;
+export const constructPath = (id) => `${BASE_URL}/${id}`;
 
 export const renderLinkButtons = (links, size, color) =>
   Object.keys(links).map((type) => (

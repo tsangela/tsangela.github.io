@@ -6,7 +6,7 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import { EyeOutlined } from '@ant-design/icons';
 
 import Header from '../components/header';
-import { ViewContainer } from '../components/styled';
+import { InnerContainer, ViewContainer } from '../components/styled';
 import theme from '../resources/theme.json';
 import { OutlineButton } from '../components/buttons';
 
@@ -22,39 +22,41 @@ function About(props) {
   const { id, title, portrait, biography, resume } = data;
   return (
     <Container id={id}>
-      <OverPack>
-        <Header>{title}</Header>
-        <TweenOne key="profile" animation={animation}>
-          <Profile>
-            <Portrait src={portrait} alt="angela tsang's portrait" />
-            <Biography>
-              {biography}
-              <a
-                href={resume.pdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                alt={'open resume in a new tab'}
-              >
-                <OutlineButton
-                  icon={<EyeOutlined />}
-                  color={theme.thistle}
-                  size="large"
+      <InnerContainer>
+        <OverPack>
+          <Header>{title}</Header>
+          <TweenOne key="profile" animation={animation}>
+            <Profile>
+              <Portrait src={portrait} alt="angela tsang's portrait" />
+              <Biography>
+                {biography}
+                <a
+                  href={resume.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  alt={'open resume in a new tab'}
                 >
-                  resume
-                </OutlineButton>
-              </a>
-            </Biography>
-          </Profile>
-        </TweenOne>
-      </OverPack>
+                  <OutlineButton
+                    icon={<EyeOutlined />}
+                    color={theme.thistle}
+                    size="large"
+                  >
+                    resume
+                  </OutlineButton>
+                </a>
+              </Biography>
+            </Profile>
+          </TweenOne>
+        </OverPack>
+      </InnerContainer>
     </Container>
   );
 }
 
-const Container = styled(ViewContainer)`
+const Container = styled.div`
   // background: linear-gradient(135deg, ${theme.thistle}, ${theme.secondary});
   background: ${lighten(0.2, theme.thistle)};
-  padding: 64px 0;
+  min-height: 100%;
 `;
 
 const Profile = styled.div`
