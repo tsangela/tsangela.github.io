@@ -6,7 +6,7 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import { EyeOutlined } from '@ant-design/icons';
 
 import Header from '../components/header';
-import { InnerContainer, ViewContainer } from '../components/styled';
+import { InnerContainer } from '../components/styled';
 import theme from '../resources/theme.json';
 import { OutlineButton } from '../components/buttons';
 

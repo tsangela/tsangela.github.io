@@ -27,8 +27,10 @@ export const getIcon = (type) => {
 
 const BASE_URL = process.env.PUBLIC_URL;
 
-export const getTab = (pathName) =>
-  pathName.charAt(0) === '/' ? pathName.substring(1) : '';
+export const getTab = (hash) => {
+  const i = hash.indexOf('/');
+  return i >= 0 ? hash.substring(i + 1) : '';
+};
 
 export const constructPath = (id) => `${BASE_URL}/${id}`;
 

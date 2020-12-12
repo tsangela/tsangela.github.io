@@ -19,7 +19,7 @@ import {
 import { constructPath, getTab } from './resources/utils';
 
 function App() {
-  const [tab, setTab] = useState(getTab(window.location.pathname));
+  const [tab, setTab] = useState(getTab(window.location.hash));
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
