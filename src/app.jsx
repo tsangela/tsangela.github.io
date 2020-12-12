@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { Route } from 'react-router';
 import { enquireScreen } from 'enquire-js';
 
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <Layout>
-      <Router>
+      <Router basename="/">
         <NavigationBar isMobile={isMobile} tab={tab} setTab={setTab} />
         <Route
           exact
